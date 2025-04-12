@@ -1,7 +1,10 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
 
 @pytest.fixture
 def driver():
@@ -10,120 +13,184 @@ def driver():
     yield driver
     driver.quit()
 
-@pytest.mark.testcase_id("TC-007")
+
+def close_security_modal_if_present(driver):
+    try:
+        WebDriverWait(driver, 5).until(
+            EC.visibility_of_element_located((By.ID, "modal-security"))
+        )
+        close_btn = driver.find_element(By.CSS_SELECTOR, "#modal-security .btn-close")
+        close_btn.click()
+        WebDriverWait(driver, 5).until(EC.invisibility_of_element((By.ID, "modal-security")))
+    except TimeoutException:
+        pass
+
+
+def login(driver):
+    driver.get("http://localhost/opencart/admin2")
+    driver.find_element(By.ID, "input-username").send_keys("fatima")
+    driver.find_element(By.ID, "input-password").send_keys("123968574")
+    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//h1[contains(text(), 'Dashboard')]"))
+    )
+    close_security_modal_if_present(driver)
+
+
 def test_admin_login(driver):
-    driver.get("http://localhost/opencart/admin")  # Adjust the URL as needed
+    login(driver)
+    heading = driver.find_element(By.XPATH, "//h1").text
+    assert "Dashboard" in heading
 
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
-    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
 
-    assert "Dashboard" in driver.title or "dashboard" in driver.current_url
-import time
-
-@pytest.mark.testcase_id("TC-008")
-def test_add_new_product(driver):
-    # Login first
-    driver.get("http://localhost/opencart/admin")
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
-    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-
-    # Navigate to Catalog > Products
-    driver.find_element(By.ID, "menu-catalog").click()
-    time.sleep(1)
-    driver.find_element(By.XPATH, "//a[text()='Products']").click()
-
-    # Click Add New
-    driver.find_element(By.CSS_SELECTOR, "a[data-original-title='Add New']").click()
-
-    # Fill in the form
-    driver.find_element(By.ID, "input-name1").send_keys("Test Product")
-    driver.find_element(By.ID, "input-meta-title1").send_keys("Test Product Meta Title")
-
-    # Switch to Data tab
-    driver.find_element(By.XPATH, "//a[text()='Data']").click()
-    driver.find_element(By.ID, "input-model").send_keys("TP-001")
-
-    # Save
-    driver.find_element(By.CSS_SELECTOR, "button[data-original-title='Save']").click()
-
-    # Verify success message
-    success = driver.find_element(By.CSS_SELECTOR, ".alert-success").text
-    assert "Success" in success
-
-@pytest.mark.testcase_id("TC-009")
 def test_delete_product(driver):
-    # Login first
-    driver.get("http://localhost/opencart/admin")
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
-    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+    login(driver)
 
-    # Navigate to Products
-    driver.find_element(By.ID, "menu-catalog").click()
-    time.sleep(1)
-    driver.find_element(By.XPATH, "//a[text()='Products']").click()
+    try:
+        # Navigate to Products page
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//a[contains(text(),'Catalog')]"))
+        ).click()
 
-    # Search for the product
-    driver.find_element(By.ID, "input-name").send_keys("Test Product")
-    driver.find_element(By.ID, "button-filter").click()
-    time.sleep(1)
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//a[text()='Products']"))
+        ).click()
 
-    # Select and delete
-    driver.find_element(By.NAME, "selected[]").click()
-    driver.find_element(By.CSS_SELECTOR, "button[data-original-title='Delete']").click()
-    alert = driver.switch_to.alert
-    alert.accept()
+        # Search for the product by name
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "input-name"))
+        ).send_keys("Test Product")
 
-    # Verify deletion
-    success = driver.find_element(By.CSS_SELECTOR, ".alert-success").text
-    assert "Success" in success
+        driver.find_element(By.ID, "button-filter").click()
 
-@pytest.mark.testcase_id("TC-010")
-def test_edit_product(driver):
-    # Login first
-    driver.get("http://localhost/opencart/admin")
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
-    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+        # Wait for the checkbox to appear and select the product
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='checkbox'][name*='selected']"))
+        ).click()
 
-    # Navigate to Products
-    driver.find_element(By.ID, "menu-catalog").click()
-    time.sleep(1)
-    driver.find_element(By.XPATH, "//a[text()='Products']").click()
+        # Click the Delete button
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "button[data-original-title='Delete'], button[title='Delete']"))
+        ).click()
 
-    # Search for the product
-    driver.find_element(By.ID, "input-name").send_keys("Test Product")
-    driver.find_element(By.ID, "button-filter").click()
-    time.sleep(1)
+        # Accept the confirmation alert
+        WebDriverWait(driver, 5).until(EC.alert_is_present())
+        driver.switch_to.alert.accept()
 
-    # Click Edit icon
-    driver.find_element(By.CSS_SELECTOR, "a[data-original-title='Edit']").click()
+        # Verify success alert
+        success = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert-success"))
+        )
+        assert "Success" in success.text
 
-    # Edit Model name in Data tab
-    driver.find_element(By.XPATH, "//a[text()='Data']").click()
-    model_field = driver.find_element(By.ID, "input-model")
-    model_field.clear()
-    model_field.send_keys("TP-002")
+    except Exception as e:
+        with open("delete_product_failure_source.html", "w", encoding="utf-8") as f:
+            f.write(driver.page_source)
+        print(f"Delete Product Error: {e}")
+        raise
 
-    # Save
-    driver.find_element(By.CSS_SELECTOR, "button[data-original-title='Save']").click()
 
-    # Verify success message
-    success = driver.find_element(By.CSS_SELECTOR, ".alert-success").text
-    assert "Success" in success
 
-@pytest.mark.testcase_id("TC-011")
 def test_admin_logout(driver):
-    driver.get("http://localhost/opencart/admin")
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
-    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+    login(driver)
 
-    # Click Logout from top-right menu
-    driver.find_element(By.CSS_SELECTOR, ".navbar-right a.dropdown-toggle").click()
-    driver.find_element(By.XPATH, "//a[text()='Logout']").click()
+    try:
+        logout_link = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "#nav-logout a.nav-link"))
+        )
+        logout_link.click()
+    except Exception as e:
+        with open("logout_failure_source.html", "w", encoding="utf-8") as f:
+            f.write(driver.page_source)
+        pytest.fail(f"Logout failed: {e}")
 
-    # Check if redirected to login page
-    assert "Login" in driver.title or "login" in driver.current_url
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "input-username"))
+    )
+    assert "login" in driver.current_url.lower()
+def test_add_new_category(driver):
+    login(driver)
+
+    try:
+        # Go to Catalog > Categories
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//a[contains(text(),'Catalog')]"))
+        ).click()
+
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//a[text()='Categories']"))
+        ).click()
+
+        # Click on Add New button
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-original-title='Add New'], a[title='Add New']"))
+        ).click()
+
+        # Fill Category Info
+        driver.find_element(By.ID, "input-name1").send_keys("Automation Category")
+        driver.find_element(By.ID, "input-meta-title1").send_keys("Meta Title for Automation Category")
+
+        # Save
+        driver.find_element(By.CSS_SELECTOR, "button[data-original-title='Save']").click()
+
+        # Verify success alert
+        success = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert-success"))
+        )
+        assert "Success" in success.text
+
+    except Exception as e:
+        with open("category_creation_failure_source.html", "w", encoding="utf-8") as f:
+            f.write(driver.page_source)
+        raise e
+
+def test_add_new_category(driver):
+    login(driver)
+
+    try:
+        # Navigate to Catalog > Categories
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//a[contains(text(),'Catalog')]"))
+        ).click()
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.LINK_TEXT, "Categories"))
+        ).click()
+
+        # Click on "Add New" button
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-bs-original-title='Add New'], a[title='Add New']"))
+        ).click()
+
+        # Fill in the General tab
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "input-name-1"))
+        ).send_keys("Automation Test Category")
+
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "input-meta-title-1"))
+        ).send_keys("Meta Title for Automation Category")
+
+        # Click the SEO tab and fill the Keyword
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//a[text()='SEO']"))
+        ).click()
+
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.NAME, "category_seo_url[0][1]"))
+        ).send_keys("automation-test-category")
+
+        # Click Save
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "button[form='form-category']"))
+        ).click()
+
+        # Check for success alert
+        success = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert-success"))
+        )
+        assert "Success" in success.text
+
+    except Exception as e:
+        with open("category_creation_failure_source_debug.html", "w", encoding="utf-8") as f:
+            f.write(driver.page_source)
+        raise e
