@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": "REQ-001",
     "name": "Homepage Functionality",
     "description": "The homepage should load properly and display all essential elements for navigation and interaction.",
@@ -8,10 +9,16 @@
     "technicalComplexity": 2,
     "regulatoryFactor": 1,
     "usageFrequency": 5,
-    "versions": ["v1.0", "v1.1"],
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
     "status": "Active",
     "owner": "Frontend Team",
-    "tags": ["Homepage", "Navigation"]
+    "tags": [
+      "Homepage",
+      "Navigation"
+    ]
   },
   {
     "id": "REQ-002",
@@ -23,10 +30,16 @@
     "technicalComplexity": 3,
     "regulatoryFactor": 1,
     "usageFrequency": 5,
-    "versions": ["v1.0", "v1.1"],
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
     "status": "Active",
     "owner": "Search Team",
-    "tags": ["Search", "Product"]
+    "tags": [
+      "Search",
+      "Product"
+    ]
   },
   {
     "id": "REQ-003",
@@ -38,10 +51,17 @@
     "technicalComplexity": 3,
     "regulatoryFactor": 1,
     "usageFrequency": 5,
-    "versions": ["v1.0", "v1.1"],
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
     "status": "Active",
     "owner": "E-commerce Team",
-    "tags": ["Cart", "Product", "Purchase"]
+    "tags": [
+      "Cart",
+      "Product",
+      "Purchase"
+    ]
   },
   {
     "id": "REQ-004",
@@ -53,10 +73,17 @@
     "technicalComplexity": 3,
     "regulatoryFactor": 3,
     "usageFrequency": 4,
-    "versions": ["v1.0", "v1.1"],
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
     "status": "Active",
     "owner": "Authentication Team",
-    "tags": ["Authentication", "Account", "Security"]
+    "tags": [
+      "Authentication",
+      "Account",
+      "Security"
+    ]
   },
   {
     "id": "REQ-005",
@@ -68,9 +95,125 @@
     "technicalComplexity": 2,
     "regulatoryFactor": 1,
     "usageFrequency": 3,
-    "versions": ["v1.0", "v1.1"],
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
     "status": "Active",
     "owner": "E-commerce Team",
-    "tags": ["Wishlist", "Product", "User Experience"]
+    "tags": [
+      "Wishlist",
+      "Product",
+      "User Experience"
+    ]
+  },
+  {
+    "id": "REQ-006",
+    "name": "Admin Authentication",
+    "description": "Admin users should be able to log in to the admin panel using valid credentials.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 2,
+    "usageFrequency": 4,
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
+    "status": "Active",
+    "owner": "Admin Team",
+    "tags": [
+      "Admin",
+      "Authentication",
+      "Security"
+    ]
+  },
+  {
+    "id": "REQ-007",
+    "name": "Product Management - Add Products",
+    "description": "Admin users should be able to add new products to the catalog from the admin panel.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 2,
+    "usageFrequency": 4,
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
+    "status": "Active",
+    "owner": "Admin Team",
+    "tags": [
+      "Admin",
+      "Product Management",
+      "Catalog"
+    ]
+  },
+  {
+    "id": "REQ-008",
+    "name": "Product Management - Delete Products",
+    "description": "Admin users should be able to delete products from the catalog using the admin panel.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 2,
+    "usageFrequency": 4,
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
+    "status": "Active",
+    "owner": "Admin Team",
+    "tags": [
+      "Admin",
+      "Product Management",
+      "Catalog"
+    ]
+  },
+  {
+    "id": "REQ-009",
+    "name": "Product Management - Edit Products",
+    "description": "Admin users should be able to edit existing products in the catalog from the admin panel.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 2,
+    "usageFrequency": 4,
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
+    "status": "Active",
+    "owner": "Admin Team",
+    "tags": [
+      "Admin",
+      "Product Management",
+      "Catalog"
+    ]
+  },
+  {
+    "id": "REQ-010",
+    "name": "Admin Authentication - Logout",
+    "description": "Admin users should be able to log out from the admin panel securely.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 2,
+    "usageFrequency": 4,
+    "versions": [
+      "v1.0",
+      "v1.1"
+    ],
+    "status": "Active",
+    "owner": "Admin Team",
+    "tags": [
+      "Admin",
+      "Authentication",
+      "Security"
+    ]
   }]
-   

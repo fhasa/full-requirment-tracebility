@@ -10,6 +10,7 @@ def driver():
     yield driver
     driver.quit()
 
+@pytest.mark.testcase_id("TC-007")
 def test_admin_login(driver):
     driver.get("http://localhost/opencart/admin")  # Adjust the URL as needed
 
@@ -20,6 +21,7 @@ def test_admin_login(driver):
     assert "Dashboard" in driver.title or "dashboard" in driver.current_url
 import time
 
+@pytest.mark.testcase_id("TC-008")
 def test_add_new_product(driver):
     # Login first
     driver.get("http://localhost/opencart/admin")
@@ -49,6 +51,8 @@ def test_add_new_product(driver):
     # Verify success message
     success = driver.find_element(By.CSS_SELECTOR, ".alert-success").text
     assert "Success" in success
+
+@pytest.mark.testcase_id("TC-009")
 def test_delete_product(driver):
     # Login first
     driver.get("http://localhost/opencart/admin")
@@ -76,6 +80,7 @@ def test_delete_product(driver):
     success = driver.find_element(By.CSS_SELECTOR, ".alert-success").text
     assert "Success" in success
 
+@pytest.mark.testcase_id("TC-010")
 def test_edit_product(driver):
     # Login first
     driver.get("http://localhost/opencart/admin")
@@ -109,6 +114,7 @@ def test_edit_product(driver):
     success = driver.find_element(By.CSS_SELECTOR, ".alert-success").text
     assert "Success" in success
 
+@pytest.mark.testcase_id("TC-011")
 def test_admin_logout(driver):
     driver.get("http://localhost/opencart/admin")
     driver.find_element(By.ID, "input-username").send_keys("fatima")

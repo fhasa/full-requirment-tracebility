@@ -170,5 +170,155 @@
     ],
     "priority": "Medium",
     "estimatedDuration": 3
+  },
+  {
+    "id": "TC-007",
+    "name": "Verify admin login functionality",
+    "description": "Verify that admin users can log in with valid credentials and access the admin dashboard.",
+    "steps": [
+      "Navigate to the OpenCart admin login page.",
+      "Enter valid admin username.",
+      "Enter valid admin password.",
+      "Click on the login button.",
+      "Verify that login is successful and admin is redirected to dashboard."
+    ],
+    "expectedResult": "Admin is successfully logged in and redirected to the dashboard.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py::test_admin_login",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-006"
+    ],
+    "version": "v1.0",
+    "executedBy": "",
+    "tags": [
+      "Admin",
+      "Authentication",
+      "Security"
+    ],
+    "priority": "Critical",
+    "estimatedDuration": 2
+  },
+  {
+    "id": "TC-008",
+    "name": "Verify adding new product functionality",
+    "description": "Verify that admin users can add a new product with basic information to the catalog.",
+    "steps": [
+      "Login to admin panel.",
+      "Navigate to Catalog > Products.",
+      "Click on 'Add New' button.",
+      "Fill in required product information (name, meta title).",
+      "Navigate to Data tab and fill in model information.",
+      "Click Save button.",
+      "Verify success message is displayed."
+    ],
+    "expectedResult": "New product is successfully added with confirmation message.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py::test_add_new_product",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-007"
+    ],
+    "version": "v1.0",
+    "executedBy": "",
+    "tags": [
+      "Admin",
+      "Product Management",
+      "Catalog"
+    ],
+    "priority": "High",
+    "estimatedDuration": 2
+  },
+  {
+    "id": "TC-009",
+    "name": "Verify product deletion functionality",
+    "description": "Verify that admin users can delete an existing product from the catalog.",
+    "steps": [
+      "Login to admin panel.",
+      "Navigate to Catalog > Products.",
+      "Search for the product to delete.",
+      "Select the product by checking the checkbox.",
+      "Click on Delete button.",
+      "Confirm deletion in the alert dialog.",
+      "Verify success message is displayed."
+    ],
+    "expectedResult": "Product is successfully deleted with confirmation message.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py::test_delete_product",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-008"
+    ],
+    "version": "v1.0",
+    "executedBy": "",
+    "tags": [
+      "Admin",
+      "Product Management",
+      "Catalog"
+    ],
+    "priority": "High",
+    "estimatedDuration": 2
+  },
+  {
+    "id": "TC-010",
+    "name": "Verify product editing functionality",
+    "description": "Verify that admin users can edit information of an existing product in the catalog.",
+    "steps": [
+      "Login to admin panel.",
+      "Navigate to Catalog > Products.",
+      "Search for the product to edit.",
+      "Click on the Edit icon.",
+      "Navigate to Data tab and update the model information.",
+      "Click Save button.",
+      "Verify success message is displayed."
+    ],
+    "expectedResult": "Product information is successfully updated with confirmation message.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py::test_edit_product",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-009"
+    ],
+    "version": "v1.0",
+    "executedBy": "",
+    "tags": [
+      "Admin",
+      "Product Management",
+      "Catalog"
+    ],
+    "priority": "High",
+    "estimatedDuration": 2
+  },
+  {
+    "id": "TC-011",
+    "name": "Verify admin logout functionality",
+    "description": "Verify that admin users can log out from the admin panel and are redirected to the login page.",
+    "steps": [
+      "Login to admin panel.",
+      "Click on the dropdown menu in the top-right corner.",
+      "Click on 'Logout' option.",
+      "Verify that admin is redirected to the login page."
+    ],
+    "expectedResult": "Admin is successfully logged out and redirected to the login page.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py::test_admin_logout",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-010"
+    ],
+    "version": "v1.0",
+    "executedBy": "",
+    "tags": [
+      "Admin",
+      "Authentication",
+      "Security"
+    ],
+    "priority": "High",
+    "estimatedDuration": 2
   }
 ]
