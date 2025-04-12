@@ -37,13 +37,17 @@ def login(driver):
     close_security_modal_if_present(driver)
 
 
+@pytest.mark.testcase_id("TC-007")
 def test_admin_login(driver):
+    """[TC-007] Verify admin login functionality"""
     login(driver)
     heading = driver.find_element(By.XPATH, "//h1").text
     assert "Dashboard" in heading
 
 
+@pytest.mark.testcase_id("TC-009")
 def test_delete_product(driver):
+    """[TC-009] Verify product deletion functionality"""
     login(driver)
 
     try:
@@ -90,8 +94,9 @@ def test_delete_product(driver):
         raise
 
 
-
+@pytest.mark.testcase_id("TC-008")
 def test_admin_logout(driver):
+    """[TC-008] Verify admin logout functionality"""
     login(driver)
 
     try:
@@ -108,43 +113,13 @@ def test_admin_logout(driver):
         EC.presence_of_element_located((By.ID, "input-username"))
     )
     assert "login" in driver.current_url.lower()
+
+# Removing the first implementation of test_add_new_category since it's duplicated
+# and keeping only the more detailed second implementation with the test case ID
+
+@pytest.mark.testcase_id("TC-010")
 def test_add_new_category(driver):
-    login(driver)
-
-    try:
-        # Go to Catalog > Categories
-        WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, "//a[contains(text(),'Catalog')]"))
-        ).click()
-
-        WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, "//a[text()='Categories']"))
-        ).click()
-
-        # Click on Add New button
-        WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-original-title='Add New'], a[title='Add New']"))
-        ).click()
-
-        # Fill Category Info
-        driver.find_element(By.ID, "input-name1").send_keys("Automation Category")
-        driver.find_element(By.ID, "input-meta-title1").send_keys("Meta Title for Automation Category")
-
-        # Save
-        driver.find_element(By.CSS_SELECTOR, "button[data-original-title='Save']").click()
-
-        # Verify success alert
-        success = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert-success"))
-        )
-        assert "Success" in success.text
-
-    except Exception as e:
-        with open("category_creation_failure_source.html", "w", encoding="utf-8") as f:
-            f.write(driver.page_source)
-        raise e
-
-def test_add_new_category(driver):
+    """[TC-010] Verify category creation functionality"""
     login(driver)
 
     try:
