@@ -19,7 +19,7 @@ class TestOpenCart:
         driver.quit()
     
     @pytest.mark.testcase_id("TC-001")
-    def test_homepage_loads(self, browser):
+    def test_homepage_loads(self, browser,custom_json_reporter):
         """[TC-001] Test that the homepage loads successfully and contains expected elements"""
         # Check that the title is not empty (more flexible than checking for specific text)
         assert browser.title, "Page title should not be empty"
@@ -33,7 +33,7 @@ class TestOpenCart:
         assert content.is_displayed(), "Content area should be displayed"
     
     @pytest.mark.testcase_id("TC-002")
-    def test_product_search(self, browser):
+    def test_product_search(self, browser,custom_json_reporter):
         """[TC-002] Test the product search functionality"""
         # Enter search term
         search_term = "phone"
@@ -85,7 +85,7 @@ class TestOpenCart:
             pytest.fail("Search results did not load within the timeout period")
     
     @pytest.mark.testcase_id("TC-003")
-    def test_add_to_cart(self, browser):
+    def test_add_to_cart(self, browser,custom_json_reporter):
         """[TC-003] Test adding a product to the cart"""
         try:
             # First try to navigate to a product category
@@ -182,7 +182,7 @@ class TestOpenCart:
             pytest.fail(f"Failed to add product to cart: {str(e)}")
     
     @pytest.mark.testcase_id("TC-004")
-    def test_user_login(self, browser):
+    def test_user_login(self, browser,custom_json_reporter):
         """[TC-004] Test the user login functionality"""
         try:
             # Navigate to account/login page
@@ -314,7 +314,7 @@ class TestOpenCart:
             
         except Exception as e:
             pytest.fail(f"Failed to complete user login: {str(e)}")
-    def login(self, browser):
+    def login(self, browser,custom_json_reporter):
         """Helper method to log in to OpenCart"""
         try:
             # Navigate to login page
@@ -451,7 +451,7 @@ class TestOpenCart:
             pytest.fail(f"Failed to complete user login: {str(e)}")
         
     @pytest.mark.testcase_id("TC-005")
-    def test_wishlist_functionality(self, browser):
+    def test_wishlist_functionality(self, browser,custom_json_reporter):
         """[TC-005] Test adding a product to the wishlist"""
         try:
             # First, login to the account
@@ -608,7 +608,7 @@ class TestOpenCart:
             pytest.fail(f"Failed to add product to wishlist: {str(e)}")
 
     @pytest.mark.testcase_id("TC-006")
-    def test_remove_from_wishlist(self, browser):
+    def test_remove_from_wishlist(self, browser,custom_json_reporter):
         """[TC-006] Test removing a product from the wishlist"""
         try:
             # First add a product to wishlist

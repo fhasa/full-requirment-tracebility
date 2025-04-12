@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": "TC-001",
     "name": "Verify that the homepage loads successfully",
     "description": "Verify that the homepage loads successfully and contains expected elements like search box and content area.",
@@ -9,14 +10,19 @@
       "Verify that the content area is displayed."
     ],
     "expectedResult": "Homepage loads successfully with all key elements present and visible.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_homepage_loads.py",
-    "lastExecuted": "",
-    "requirementIds": ["REQ-001"],
+    "lastExecuted": "2025-04-12T16:28:43.517646",
+    "requirementIds": [
+      "REQ-001"
+    ],
     "version": "v1.0",
-    "executedBy": "",
-    "tags": ["Homepage", "Navigation"],
+    "executedBy": "Pytest",
+    "tags": [
+      "Homepage",
+      "Navigation"
+    ],
     "priority": "High",
     "estimatedDuration": 1
   },
@@ -32,14 +38,19 @@
       "Verify that search results contain the search term or product listings."
     ],
     "expectedResult": "Search results page loads and displays relevant products based on the search term.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_product_search.py",
-    "lastExecuted": "",
-    "requirementIds": ["REQ-002"],
+    "lastExecuted": "2025-04-12T16:28:43.517646",
+    "requirementIds": [
+      "REQ-002"
+    ],
     "version": "v1.0",
-    "executedBy": "",
-    "tags": ["Search", "Product"],
+    "executedBy": "Pytest",
+    "tags": [
+      "Search",
+      "Product"
+    ],
     "priority": "High",
     "estimatedDuration": 2
   },
@@ -56,14 +67,20 @@
       "Verify that the product is added to the cart through success message or cart icon update."
     ],
     "expectedResult": "Product is successfully added to the cart with confirmation message or cart icon update.",
-    "status": "Not Run",
+    "status": "Failed",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_add_to_cart.py",
-    "lastExecuted": "",
-    "requirementIds": ["REQ-003"],
+    "lastExecuted": "2025-04-12T16:28:43.518646",
+    "requirementIds": [
+      "REQ-003"
+    ],
     "version": "v1.0",
-    "executedBy": "",
-    "tags": ["Cart", "Product", "Purchase"],
+    "executedBy": "Pytest",
+    "tags": [
+      "Cart",
+      "Product",
+      "Purchase"
+    ],
     "priority": "Critical",
     "estimatedDuration": 3
   },
@@ -80,14 +97,20 @@
       "Verify that login is successful and user is redirected to account area."
     ],
     "expectedResult": "User is successfully logged in and redirected to account area with account information visible.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_user_login.py",
-    "lastExecuted": "",
-    "requirementIds": ["REQ-004"],
+    "lastExecuted": "2025-04-12T16:28:43.518646",
+    "requirementIds": [
+      "REQ-004"
+    ],
     "version": "v1.0",
-    "executedBy": "",
-    "tags": ["Authentication", "Account", "Security"],
+    "executedBy": "Pytest",
+    "tags": [
+      "Authentication",
+      "Account",
+      "Security"
+    ],
     "priority": "Critical",
     "estimatedDuration": 2
   },
@@ -102,14 +125,20 @@
       "Verify success message or navigate to wishlist page to confirm product was added."
     ],
     "expectedResult": "Product is successfully added to the wishlist with confirmation message or visible in wishlist page.",
-    "status": "Not Run",
+    "status": "Failed",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_wishlist_functionality.py",
-    "lastExecuted": "",
-    "requirementIds": ["REQ-005"],
+    "lastExecuted": "2025-04-12T16:28:43.519639",
+    "requirementIds": [
+      "REQ-005"
+    ],
     "version": "v1.0",
-    "executedBy": "",
-    "tags": ["Wishlist", "Product", "User Experience"],
+    "executedBy": "Pytest",
+    "tags": [
+      "Wishlist",
+      "Product",
+      "User Experience"
+    ],
     "priority": "Medium",
     "estimatedDuration": 3
   },
@@ -125,14 +154,21 @@
       "Verify that the product is removed from the wishlist."
     ],
     "expectedResult": "Product is successfully removed from the wishlist with confirmation message or no longer visible in wishlist page.",
-    "status": "Not Run",
+    "status": "Failed",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_remove_from_wishlist.py",
-    "lastExecuted": "",
-    "requirementIds": ["REQ-005"],
+    "lastExecuted": "2025-04-12T16:28:43.519639",
+    "requirementIds": [
+      "REQ-005"
+    ],
     "version": "v1.0",
-    "executedBy": "",
-    "tags": ["Wishlist", "Product", "User Experience"],
+    "executedBy": "Pytest",
+    "tags": [
+      "Wishlist",
+      "Product",
+      "User Experience"
+    ],
     "priority": "Medium",
     "estimatedDuration": 3
-  }]
+  }
+]
