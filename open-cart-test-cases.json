@@ -1,230 +1,290 @@
-[{
-  "id": "TC-001",
-  "name": "Verify that the homepage loads successfully",
-  "description": "Verify that the homepage loads successfully and contains expected elements like search box and content area.",
-  "steps": [
-    "Navigate to the OpenCart homepage URL.",
-    "Check that the page title is not empty.",
-    "Verify that the search box is displayed.",
-    "Verify that the content area is displayed."
-  ],
-  "expectedResult": "Homepage loads successfully with all key elements present and visible.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/TestOpenCart/test_homepage_loads.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-001"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Homepage", "Navigation"],
-  "priority": "High",
-  "estimatedDuration": 1
-},
-{
-  "id": "TC-002",
-  "name": "Verify product search functionality",
-  "description": "Verify that users can search for products using the search box and relevant results are displayed.",
-  "steps": [
-    "Navigate to the OpenCart homepage.",
-    "Enter search term 'phone' in the search box.",
-    "Click on the search button or press Enter.",
-    "Wait for search results page to load.",
-    "Verify that search results contain the search term or product listings."
-  ],
-  "expectedResult": "Search results page loads and displays relevant products based on the search term.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/TestOpenCart/test_product_search.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-002"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Search", "Product"],
-  "priority": "High",
-  "estimatedDuration": 2
-},
-{
-  "id": "TC-003",
-  "name": "Verify add to cart functionality",
-  "description": "Verify that users can add products to the shopping cart from product pages.",
-  "steps": [
-    "Navigate to the OpenCart homepage.",
-    "Navigate to a product category by clicking on a category link.",
-    "Select a product by clicking on it.",
-    "Wait for the product page to load.",
-    "Click on the 'Add to Cart' button.",
-    "Verify that the product is added to the cart through success message or cart icon update."
-  ],
-  "expectedResult": "Product is successfully added to the cart with confirmation message or cart icon update.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/TestOpenCart/test_add_to_cart.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-003"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Cart", "Product", "Purchase"],
-  "priority": "Critical",
-  "estimatedDuration": 3
-},
-{
-  "id": "TC-004",
-  "name": "Verify user login functionality",
-  "description": "Verify that users can log in with valid credentials and access their account area.",
-  "steps": [
-    "Navigate to the OpenCart homepage.",
-    "Click on 'My Account' dropdown.",
-    "Select 'Login' from the dropdown menu.",
-    "Enter valid email address and password.",
-    "Click on the login button.",
-    "Verify that login is successful and user is redirected to account area."
-  ],
-  "expectedResult": "User is successfully logged in and redirected to account area with account information visible.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/TestOpenCart/test_user_login.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-004"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Authentication", "Account", "Security"],
-  "priority": "Critical",
-  "estimatedDuration": 2
-},
-{
-  "id": "TC-005",
-  "name": "Verify add to wishlist functionality",
-  "description": "Verify that logged-in users can add products to their wishlist.",
-  "steps": [
-    "Login to a user account.",
-    "Navigate to a product page.",
-    "Click on the 'Add to Wish List' button.",
-    "Verify success message or navigate to wishlist page to confirm product was added."
-  ],
-  "expectedResult": "Product is successfully added to the wishlist with confirmation message or visible in wishlist page.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/TestOpenCart/test_wishlist_functionality.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-005"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Wishlist", "Product", "User Experience"],
-  "priority": "Medium",
-  "estimatedDuration": 3
-},
-{
-  "id": "TC-006",
-  "name": "Verify remove from wishlist functionality",
-  "description": "Verify that logged-in users can remove products from their wishlist.",
-  "steps": [
-    "Login to a user account.",
-    "Add a product to the wishlist.",
-    "Navigate to the wishlist page.",
-    "Click on the 'Remove' button for the product.",
-    "Verify that the product is removed from the wishlist."
-  ],
-  "expectedResult": "Product is successfully removed from the wishlist with confirmation message or no longer visible in wishlist page.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/TestOpenCart/test_remove_from_wishlist.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-005"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Wishlist", "Product", "User Experience"],
-  "priority": "Medium",
-  "estimatedDuration": 3
-},
-{
-  "id": "TC-007",
-  "name": "Verify admin login functionality",
-  "description": "Verify that administrators can log in to the admin panel with valid credentials.",
-  "steps": [
-    "Navigate to the OpenCart admin login page.",
-    "Enter valid admin username and password.",
-    "Click on the login button.",
-    "Verify that login is successful and admin is redirected to dashboard."
-  ],
-  "expectedResult": "Admin is successfully logged in and redirected to dashboard with dashboard information visible.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/test_admin.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-006"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Admin", "Authentication", "Security"],
-  "priority": "Critical",
-  "estimatedDuration": 2
-},
-{
-  "id": "TC-008",
-  "name": "Verify admin logout functionality",
-  "description": "Verify that administrators can log out from the admin panel.",
-  "steps": [
-    "Login to the admin panel.",
-    "Click on the logout link in the navigation menu.",
-    "Verify that logout is successful and admin is redirected to login page."
-  ],
-  "expectedResult": "Admin is successfully logged out and redirected to login page.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/test_admin.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-006"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Admin", "Authentication", "Security"],
-  "priority": "High",
-  "estimatedDuration": 1
-},
-{
-  "id": "TC-009",
-  "name": "Verify product deletion functionality",
-  "description": "Verify that administrators can delete products from the catalog.",
-  "steps": [
-    "Login to the admin panel.",
-    "Navigate to Products page.",
-    "Search for a specific product.",
-    "Select the product and click Delete.",
-    "Confirm deletion in the alert dialog.",
-    "Verify success message for product deletion."
-  ],
-  "expectedResult": "Product is successfully deleted with confirmation message.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/test_admin.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-007"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Admin", "Product", "Management"],
-  "priority": "High",
-  "estimatedDuration": 3
-},
-{
-  "id": "TC-010",
-  "name": "Verify category creation functionality",
-  "description": "Verify that administrators can create new product categories.",
-  "steps": [
-    "Login to the admin panel.",
-    "Navigate to Categories page.",
-    "Click on Add New button.",
-    "Fill in category details in the General tab.",
-    "Fill in SEO details if needed.",
-    "Save the new category.",
-    "Verify success message for category creation."
-  ],
-  "expectedResult": "Category is successfully created with confirmation message.",
-  "status": "Not Run",
-  "automationStatus": "Automated",
-  "automationPath": "tests/test_admin.py",
-  "lastExecuted": "",
-  "requirementIds": ["REQ-008"],
-  "version": "v1.0",
-  "executedBy": "",
-  "tags": ["Admin", "Category", "Management"],
-  "priority": "High",
-  "estimatedDuration": 3
-}]
+[
+  {
+    "id": "TC-001",
+    "name": "Verify that the homepage loads successfully",
+    "description": "Verify that the homepage loads successfully and contains expected elements like search box and content area.",
+    "steps": [
+      "Navigate to the OpenCart homepage URL.",
+      "Check that the page title is not empty.",
+      "Verify that the search box is displayed.",
+      "Verify that the content area is displayed."
+    ],
+    "expectedResult": "Homepage loads successfully with all key elements present and visible.",
+    "status": "Passed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_homepage_loads.py",
+    "lastExecuted": "2025-04-13T11:41:35.919487",
+    "requirementIds": [
+      "REQ-001"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Homepage",
+      "Navigation"
+    ],
+    "priority": "High",
+    "estimatedDuration": 1
+  },
+  {
+    "id": "TC-002",
+    "name": "Verify product search functionality",
+    "description": "Verify that users can search for products using the search box and relevant results are displayed.",
+    "steps": [
+      "Navigate to the OpenCart homepage.",
+      "Enter search term 'phone' in the search box.",
+      "Click on the search button or press Enter.",
+      "Wait for search results page to load.",
+      "Verify that search results contain the search term or product listings."
+    ],
+    "expectedResult": "Search results page loads and displays relevant products based on the search term.",
+    "status": "Passed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_product_search.py",
+    "lastExecuted": "2025-04-13T11:41:35.919487",
+    "requirementIds": [
+      "REQ-002"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Search",
+      "Product"
+    ],
+    "priority": "High",
+    "estimatedDuration": 2
+  },
+  {
+    "id": "TC-003",
+    "name": "Verify add to cart functionality",
+    "description": "Verify that users can add products to the shopping cart from product pages.",
+    "steps": [
+      "Navigate to the OpenCart homepage.",
+      "Navigate to a product category by clicking on a category link.",
+      "Select a product by clicking on it.",
+      "Wait for the product page to load.",
+      "Click on the 'Add to Cart' button.",
+      "Verify that the product is added to the cart through success message or cart icon update."
+    ],
+    "expectedResult": "Product is successfully added to the cart with confirmation message or cart icon update.",
+    "status": "Failed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_add_to_cart.py",
+    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "requirementIds": [
+      "REQ-003"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Cart",
+      "Product",
+      "Purchase"
+    ],
+    "priority": "Critical",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC-004",
+    "name": "Verify user login functionality",
+    "description": "Verify that users can log in with valid credentials and access their account area.",
+    "steps": [
+      "Navigate to the OpenCart homepage.",
+      "Click on 'My Account' dropdown.",
+      "Select 'Login' from the dropdown menu.",
+      "Enter valid email address and password.",
+      "Click on the login button.",
+      "Verify that login is successful and user is redirected to account area."
+    ],
+    "expectedResult": "User is successfully logged in and redirected to account area with account information visible.",
+    "status": "Passed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_user_login.py",
+    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "requirementIds": [
+      "REQ-004"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Authentication",
+      "Account",
+      "Security"
+    ],
+    "priority": "Critical",
+    "estimatedDuration": 2
+  },
+  {
+    "id": "TC-005",
+    "name": "Verify add to wishlist functionality",
+    "description": "Verify that logged-in users can add products to their wishlist.",
+    "steps": [
+      "Login to a user account.",
+      "Navigate to a product page.",
+      "Click on the 'Add to Wish List' button.",
+      "Verify success message or navigate to wishlist page to confirm product was added."
+    ],
+    "expectedResult": "Product is successfully added to the wishlist with confirmation message or visible in wishlist page.",
+    "status": "Failed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_wishlist_functionality.py",
+    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "requirementIds": [
+      "REQ-005"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Wishlist",
+      "Product",
+      "User Experience"
+    ],
+    "priority": "Medium",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC-006",
+    "name": "Verify remove from wishlist functionality",
+    "description": "Verify that logged-in users can remove products from their wishlist.",
+    "steps": [
+      "Login to a user account.",
+      "Add a product to the wishlist.",
+      "Navigate to the wishlist page.",
+      "Click on the 'Remove' button for the product.",
+      "Verify that the product is removed from the wishlist."
+    ],
+    "expectedResult": "Product is successfully removed from the wishlist with confirmation message or no longer visible in wishlist page.",
+    "status": "Failed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_remove_from_wishlist.py",
+    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "requirementIds": [
+      "REQ-005"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Wishlist",
+      "Product",
+      "User Experience"
+    ],
+    "priority": "Medium",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC-007",
+    "name": "Verify admin login functionality",
+    "description": "Verify that administrators can log in to the admin panel with valid credentials.",
+    "steps": [
+      "Navigate to the OpenCart admin login page.",
+      "Enter valid admin username and password.",
+      "Click on the login button.",
+      "Verify that login is successful and admin is redirected to dashboard."
+    ],
+    "expectedResult": "Admin is successfully logged in and redirected to dashboard with dashboard information visible.",
+    "status": "Passed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py",
+    "lastExecuted": "2025-04-13T14:37:18.095546",
+    "requirementIds": [
+      "REQ-006"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Admin",
+      "Authentication",
+      "Security"
+    ],
+    "priority": "Critical",
+    "estimatedDuration": 2
+  },
+  {
+    "id": "TC-008",
+    "name": "Verify admin logout functionality",
+    "description": "Verify that administrators can log out from the admin panel.",
+    "steps": [
+      "Login to the admin panel.",
+      "Click on the logout link in the navigation menu.",
+      "Verify that logout is successful and admin is redirected to login page."
+    ],
+    "expectedResult": "Admin is successfully logged out and redirected to login page.",
+    "status": "Passed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py",
+    "lastExecuted": "2025-04-13T14:37:18.096542",
+    "requirementIds": [
+      "REQ-006"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Admin",
+      "Authentication",
+      "Security"
+    ],
+    "priority": "High",
+    "estimatedDuration": 1
+  },
+  {
+    "id": "TC-009",
+    "name": "Verify product deletion functionality",
+    "description": "Verify that administrators can delete products from the catalog.",
+    "steps": [
+      "Login to the admin panel.",
+      "Navigate to Products page.",
+      "Search for a specific product.",
+      "Select the product and click Delete.",
+      "Confirm deletion in the alert dialog.",
+      "Verify success message for product deletion."
+    ],
+    "expectedResult": "Product is successfully deleted with confirmation message.",
+    "status": "Passed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py",
+    "lastExecuted": "2025-04-13T14:37:18.095546",
+    "requirementIds": [
+      "REQ-007"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Admin",
+      "Product",
+      "Management"
+    ],
+    "priority": "High",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC-010",
+    "name": "Verify category creation functionality",
+    "description": "Verify that administrators can create new product categories.",
+    "steps": [
+      "Login to the admin panel.",
+      "Navigate to Categories page.",
+      "Click on Add New button.",
+      "Fill in category details in the General tab.",
+      "Fill in SEO details if needed.",
+      "Save the new category.",
+      "Verify success message for category creation."
+    ],
+    "expectedResult": "Category is successfully created with confirmation message.",
+    "status": "Passed",
+    "automationStatus": "Automated",
+    "automationPath": "tests/test_admin.py",
+    "lastExecuted": "2025-04-13T14:37:18.097541",
+    "requirementIds": [
+      "REQ-008"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Admin",
+      "Category",
+      "Management"
+    ],
+    "priority": "High",
+    "estimatedDuration": 3
+  }
+]

@@ -4,7 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-
+import time
+import uuid
 
 @pytest.fixture
 def driver():
@@ -38,7 +39,7 @@ def login(driver):
 
 
 @pytest.mark.testcase_id("TC-007")
-def test_admin_login(driver):
+def test_admin_login(driver,custom_json_reporter):
     """[TC-007] Verify admin login functionality"""
     login(driver)
     heading = driver.find_element(By.XPATH, "//h1").text
@@ -46,7 +47,7 @@ def test_admin_login(driver):
 
 
 @pytest.mark.testcase_id("TC-009")
-def test_delete_product(driver):
+def test_delete_product(driver,custom_json_reporter):
     """[TC-009] Verify product deletion functionality"""
     login(driver)
 
@@ -95,7 +96,7 @@ def test_delete_product(driver):
 
 
 @pytest.mark.testcase_id("TC-008")
-def test_admin_logout(driver):
+def test_admin_logout(driver,custom_json_reporter):
     """[TC-008] Verify admin logout functionality"""
     login(driver)
 
@@ -118,7 +119,7 @@ def test_admin_logout(driver):
 # and keeping only the more detailed second implementation with the test case ID
 
 @pytest.mark.testcase_id("TC-010")
-def test_add_new_category(driver):
+def test_add_new_category(driver, custom_json_reporter):
     """[TC-010] Verify category creation functionality"""
     login(driver)
 
@@ -136,23 +137,31 @@ def test_add_new_category(driver):
             EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-bs-original-title='Add New'], a[title='Add New']"))
         ).click()
 
+        # Generate unique name with timestamp to avoid duplicate entries
+        timestamp = str(int(time.time()))
+        category_name = f"Automation Test Category {timestamp}"
+        meta_title = f"Meta Title for Automation Category {timestamp}"
+        
         # Fill in the General tab
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "input-name-1"))
-        ).send_keys("Automation Test Category")
+        ).send_keys(category_name)
 
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "input-meta-title-1"))
-        ).send_keys("Meta Title for Automation Category")
+        ).send_keys(meta_title)
 
-        # Click the SEO tab and fill the Keyword
+        # Click the SEO tab and fill the Keyword with a unique value
         WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//a[text()='SEO']"))
         ).click()
 
+        # Generate a unique SEO URL keyword based on the category name and timestamp
+        seo_keyword = f"automation-test-category-{timestamp}".lower()
+        
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.NAME, "category_seo_url[0][1]"))
-        ).send_keys("automation-test-category")
+        ).send_keys(seo_keyword)
 
         # Click Save
         WebDriverWait(driver, 10).until(
