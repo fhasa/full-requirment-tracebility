@@ -182,10 +182,10 @@
       "Verify that login is successful and admin is redirected to dashboard."
     ],
     "expectedResult": "Admin is successfully logged in and redirected to dashboard with dashboard information visible.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-13T14:37:18.095546",
+    "lastExecuted": "2025-04-17T15:39:56.291160",
     "requirementIds": [
       "REQ-001"
     ],
@@ -209,10 +209,10 @@
       "Verify that logout is successful and admin is redirected to login page."
     ],
     "expectedResult": "Admin is successfully logged out and redirected to login page.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-13T14:37:18.096542",
+    "lastExecuted": "2025-04-17T15:39:56.291514",
     "requirementIds": [
       "REQ-001"
     ],
@@ -239,10 +239,10 @@
       "Verify success message for product deletion."
     ],
     "expectedResult": "Product is successfully deleted with confirmation message.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-13T14:37:18.095546",
+    "lastExecuted": "2025-04-17T15:39:56.291514",
     "requirementIds": [
       "REQ-002"
     ],
@@ -270,10 +270,10 @@
       "Verify success message for category creation."
     ],
     "expectedResult": "Category is successfully created with confirmation message.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-13T14:37:18.097541",
+    "lastExecuted": "2025-04-17T15:39:56.292512",
     "requirementIds": [
       "REQ-003"
     ],
@@ -298,15 +298,15 @@
       "Verify that an error message is displayed and the admin remains on the login page."
     ],
     "expectedResult": "Error message displayed stating 'No match for Username and/or Password', and admin remains on login page.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "",
+    "lastExecuted": "2025-04-17T15:39:56.293528",
     "requirementIds": [
       "REQ-001"
     ],
     "version": "v1.0",
-    "executedBy": "",
+    "executedBy": "Pytest",
     "tags": [
       "Admin",
       "Authentication",
@@ -326,15 +326,15 @@
       "Verify that an error message is displayed and the admin remains on the login page."
     ],
     "expectedResult": "Error message displayed stating 'No match for Username and/or Password', and admin remains on login page.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "",
+    "lastExecuted": "2025-04-17T15:39:56.293528",
     "requirementIds": [
       "REQ-001"
     ],
     "version": "v1.0",
-    "executedBy": "",
+    "executedBy": "Pytest",
     "tags": [
       "Admin",
       "Authentication",
@@ -354,15 +354,15 @@
       "Verify that an error message is displayed and the admin remains on the login page."
     ],
     "expectedResult": "Error message displayed stating 'No match for Username and/or Password', and admin remains on login page.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "",
+    "lastExecuted": "2025-04-17T15:39:56.294621",
     "requirementIds": [
       "REQ-001"
     ],
     "version": "v1.0",
-    "executedBy": "",
+    "executedBy": "Pytest",
     "tags": [
       "Admin",
       "Authentication",
@@ -382,15 +382,15 @@
       "Verify that validation error messages are displayed."
     ],
     "expectedResult": "Validation error messages displayed for empty fields, and admin remains on login page.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "",
+    "lastExecuted": "2025-04-17T15:39:56.294621",
     "requirementIds": [
       "REQ-001"
     ],
     "version": "v1.0",
-    "executedBy": "",
+    "executedBy": "Pytest",
     "tags": [
       "Admin",
       "Authentication",
@@ -413,15 +413,15 @@
       "Verify that dashboard elements are visible."
     ],
     "expectedResult": "After successful login, admin is redirected to dashboard page with dashboard elements visible.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "",
+    "lastExecuted": "2025-04-17T15:39:56.295501",
     "requirementIds": [
       "REQ-001"
     ],
     "version": "v1.0",
-    "executedBy": "",
+    "executedBy": "Pytest",
     "tags": [
       "Admin",
       "Authentication",
@@ -442,15 +442,15 @@
       "Verify that the password field has type attribute set to 'password'."
     ],
     "expectedResult": "Password is masked when entered in the password field and not visible as plain text.",
-    "status": "Not Run",
+    "status": "Failed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "",
+    "lastExecuted": "2025-04-17T15:39:56.295501",
     "requirementIds": [
       "REQ-001"
     ],
     "version": "v1.0",
-    "executedBy": "",
+    "executedBy": "Pytest",
     "tags": [
       "Admin",
       "Authentication",
@@ -474,15 +474,15 @@
       "Verify that the admin is not able to access protected admin pages and is redirected to login."
     ],
     "expectedResult": "After logout, the browser back button doesn't allow access to protected admin pages and redirects to the login page.",
-    "status": "Not Run",
+    "status": "Passed",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "",
+    "lastExecuted": "2025-04-17T15:39:56.296498",
     "requirementIds": [
       "REQ-001"
     ],
     "version": "v1.0",
-    "executedBy": "",
+    "executedBy": "Pytest",
     "tags": [
       "Admin",
       "Authentication",
