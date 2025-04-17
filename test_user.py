@@ -254,7 +254,7 @@ class TestOpenCart:
             # Password
             password_field = browser.find_element(By.ID, "input-password")
             password_field.clear() 
-            password_field.send_keys("demo")  # Replace with actual test account password
+            password_field.send_keys("demo1234")  # Replace with actual test account password
             
             # Submit the form
             submit_button_selectors = [
@@ -381,12 +381,12 @@ class TestOpenCart:
             # Email - assuming default OpenCart demo credentials, adjust if needed
             email_field = browser.find_element(By.ID, "input-email")
             email_field.clear()
-            email_field.send_keys("fatimai.hasanat@gmail.com")  # Replace with actual test account email
+            email_field.send_keys("demo@opencart.com")  # Replace with actual test account email
             
             # Password
             password_field = browser.find_element(By.ID, "input-password")
             password_field.clear() 
-            password_field.send_keys("123968574")  # Replace with actual test account password
+            password_field.send_keys("demo1234")  # Replace with actual test account password
             
             # Submit the form
             submit_button_selectors = [
