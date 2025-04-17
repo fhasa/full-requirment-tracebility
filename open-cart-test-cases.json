@@ -15,7 +15,7 @@
     "automationPath": "tests/TestOpenCart/test_homepage_loads.py",
     "lastExecuted": "2025-04-13T11:41:35.919487",
     "requirementIds": [
-      "REQ-001"
+      "REQ-004"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -43,7 +43,7 @@
     "automationPath": "tests/TestOpenCart/test_product_search.py",
     "lastExecuted": "2025-04-13T11:41:35.919487",
     "requirementIds": [
-      "REQ-002"
+      "REQ-005"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -72,7 +72,7 @@
     "automationPath": "tests/TestOpenCart/test_add_to_cart.py",
     "lastExecuted": "2025-04-13T11:41:35.920496",
     "requirementIds": [
-      "REQ-003"
+      "REQ-006"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -102,7 +102,7 @@
     "automationPath": "tests/TestOpenCart/test_user_login.py",
     "lastExecuted": "2025-04-13T11:41:35.920496",
     "requirementIds": [
-      "REQ-004"
+      "REQ-007"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -130,7 +130,7 @@
     "automationPath": "tests/TestOpenCart/test_wishlist_functionality.py",
     "lastExecuted": "2025-04-13T11:41:35.920496",
     "requirementIds": [
-      "REQ-005"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -159,7 +159,7 @@
     "automationPath": "tests/TestOpenCart/test_remove_from_wishlist.py",
     "lastExecuted": "2025-04-13T11:41:35.920496",
     "requirementIds": [
-      "REQ-005"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -187,7 +187,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "2025-04-13T14:37:18.095546",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -214,7 +214,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "2025-04-13T14:37:18.096542",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -244,7 +244,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "2025-04-13T14:37:18.095546",
     "requirementIds": [
-      "REQ-007"
+      "REQ-002"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -275,7 +275,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "2025-04-13T14:37:18.097541",
     "requirementIds": [
-      "REQ-008"
+      "REQ-003"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -303,7 +303,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
@@ -331,7 +331,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
@@ -359,7 +359,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
@@ -387,7 +387,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
@@ -418,7 +418,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
@@ -447,7 +447,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
@@ -479,7 +479,7 @@
     "automationPath": "tests/test_admin.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
@@ -508,7 +508,7 @@
     "automationPath": "",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-001"
     ],
     "version": "v1.0",
     "executedBy": "",
