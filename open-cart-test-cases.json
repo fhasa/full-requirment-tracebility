@@ -13,7 +13,7 @@
     "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_homepage_loads.py",
-    "lastExecuted": "2025-04-13T11:41:35.919487",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-004"
     ],
@@ -41,7 +41,7 @@
     "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_product_search.py",
-    "lastExecuted": "2025-04-13T11:41:35.919487",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-005"
     ],
@@ -70,7 +70,7 @@
     "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_add_to_cart.py",
-    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-006"
     ],
@@ -100,7 +100,7 @@
     "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_user_login.py",
-    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-007"
     ],
@@ -128,7 +128,7 @@
     "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_wishlist_functionality.py",
-    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-008"
     ],
@@ -157,7 +157,7 @@
     "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/TestOpenCart/test_remove_from_wishlist.py",
-    "lastExecuted": "2025-04-13T11:41:35.920496",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-008"
     ],
@@ -182,10 +182,10 @@
       "Verify that login is successful and admin is redirected to dashboard."
     ],
     "expectedResult": "Admin is successfully logged in and redirected to dashboard with dashboard information visible.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.291160",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -209,10 +209,10 @@
       "Verify that logout is successful and admin is redirected to login page."
     ],
     "expectedResult": "Admin is successfully logged out and redirected to login page.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.291514",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -239,10 +239,10 @@
       "Verify success message for product deletion."
     ],
     "expectedResult": "Product is successfully deleted with confirmation message.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.291514",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-002"
     ],
@@ -270,10 +270,10 @@
       "Verify success message for category creation."
     ],
     "expectedResult": "Category is successfully created with confirmation message.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.292512",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-003"
     ],
@@ -298,10 +298,10 @@
       "Verify that an error message is displayed and the admin remains on the login page."
     ],
     "expectedResult": "Error message displayed stating 'No match for Username and/or Password', and admin remains on login page.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.293528",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -326,10 +326,10 @@
       "Verify that an error message is displayed and the admin remains on the login page."
     ],
     "expectedResult": "Error message displayed stating 'No match for Username and/or Password', and admin remains on login page.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.293528",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -354,10 +354,10 @@
       "Verify that an error message is displayed and the admin remains on the login page."
     ],
     "expectedResult": "Error message displayed stating 'No match for Username and/or Password', and admin remains on login page.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.294621",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -382,10 +382,10 @@
       "Verify that validation error messages are displayed."
     ],
     "expectedResult": "Validation error messages displayed for empty fields, and admin remains on login page.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.294621",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -413,10 +413,10 @@
       "Verify that dashboard elements are visible."
     ],
     "expectedResult": "After successful login, admin is redirected to dashboard page with dashboard elements visible.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.295501",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -442,10 +442,10 @@
       "Verify that the password field has type attribute set to 'password'."
     ],
     "expectedResult": "Password is masked when entered in the password field and not visible as plain text.",
-    "status": "Failed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.295501",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
@@ -474,10 +474,10 @@
       "Verify that the admin is not able to access protected admin pages and is redirected to login."
     ],
     "expectedResult": "After logout, the browser back button doesn't allow access to protected admin pages and redirects to the login page.",
-    "status": "Passed",
+    "status": "Not Run",
     "automationStatus": "Automated",
     "automationPath": "tests/test_admin.py",
-    "lastExecuted": "2025-04-17T15:39:56.296498",
+    "lastExecuted": "",
     "requirementIds": [
       "REQ-001"
     ],
