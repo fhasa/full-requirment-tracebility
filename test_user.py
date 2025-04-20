@@ -13,7 +13,7 @@ class TestOpenCart:
         # Setup - create a browser instance
         driver = webdriver.Chrome()  # You can change to Firefox, Edge, etc.
         driver.maximize_window()
-        driver.get("http://localhost/opencart/")  # Change URL if your OpenCart is hosted elsewhere
+        driver.get("https://demo.opencart.com.gr/")  # Change URL if your OpenCart is hosted elsewhere
         yield driver
         # Teardown - close the browser
         driver.quit()
@@ -236,9 +236,9 @@ class TestOpenCart:
                 
                 # Check if we're on login page
                 if "login" not in browser.current_url:
-                    browser.get("http://localhost/opencart/index.php?route=account/login")
+                    browser.get("https://demo.opencart.com.gr/index.php?route=account/login")
             except:
-                browser.get("http://localhost/opencart/index.php?route=account/login")
+                browser.get("https://demo.opencart.com.gr/index.php?route=account/login")
             
             # Wait for login form to load
             WebDriverWait(browser, 10).until(
@@ -368,9 +368,9 @@ class TestOpenCart:
                 
                 # Check if we're on login page
                 if "login" not in browser.current_url:
-                    browser.get("http://localhost/opencart/index.php?route=account/login")
+                    browser.get("https://demo.opencart.com.gr/index.php?route=account/login")
             except:
-                browser.get("http://localhost/opencart/index.php?route=account/login")
+                browser.get("https://demo.opencart.com.gr/index.php?route=account/login")
             
             # Wait for login form to load
             WebDriverWait(browser, 10).until(
@@ -442,7 +442,7 @@ class TestOpenCart:
                 assert success, "Login should complete successfully and redirect to account area"
                 
                 # Return to homepage
-                browser.get("http://localhost/opencart/")
+                browser.get("https://demo.opencart.com.gr/")
                 
             except TimeoutException:
                 pytest.fail("Login completion page did not load within timeout period")
@@ -503,7 +503,7 @@ class TestOpenCart:
                                 break
                 except:
                     # If all fails, try direct product URL
-                    browser.get("http://localhost/opencart/index.php?route=product/product&product_id=43")
+                    browser.get("https://demo.opencart.com.gr/index.php?route=product/product&product_id=43")
                     product_found = True
             
             # Wait for product page to load
@@ -587,7 +587,7 @@ class TestOpenCart:
                 
                 # If navigation didn't work, try direct URL
                 if not wishlist_nav_clicked:
-                    browser.get("http://localhost/opencart/index.php?route=account/wishlist")
+                    browser.get("https://demo.opencart.com.gr/index.php?route=account/wishlist")
                 
                 # Wait for wishlist page to load
                 try:
@@ -637,7 +637,7 @@ class TestOpenCart:
             
             # If navigation didn't work, try direct URL
             if not wishlist_nav_clicked:
-                browser.get("http://localhost/opencart/index.php?route=account/wishlist")
+                browser.get("https://demo.opencart.com.gr/index.php?route=account/wishlist")
             
             # Wait for wishlist page to load
             WebDriverWait(browser, 10).until(

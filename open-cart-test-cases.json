@@ -1,6 +1,6 @@
 [
   {
-    "id": "TC-001",
+    "id": "TC_001",
     "name": "Verify that the homepage loads successfully",
     "description": "Verify that the homepage loads successfully and contains expected elements like search box and content area.",
     "steps": [
@@ -27,7 +27,7 @@
     "estimatedDuration": 1
   },
   {
-    "id": "TC-002",
+    "id": "TC_002",
     "name": "Verify product search functionality",
     "description": "Verify that users can search for products using the search box and relevant results are displayed.",
     "steps": [
@@ -55,7 +55,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-003",
+    "id": "TC_003",
     "name": "Verify add to cart functionality",
     "description": "Verify that users can add products to the shopping cart from product pages.",
     "steps": [
@@ -85,7 +85,7 @@
     "estimatedDuration": 3
   },
   {
-    "id": "TC-004",
+    "id": "TC_004",
     "name": "Verify user login functionality",
     "description": "Verify that users can log in with valid credentials and access their account area.",
     "steps": [
@@ -115,7 +115,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-005",
+    "id": "TC_005",
     "name": "Verify add to wishlist functionality",
     "description": "Verify that logged-in users can add products to their wishlist.",
     "steps": [
@@ -143,7 +143,7 @@
     "estimatedDuration": 3
   },
   {
-    "id": "TC-006",
+    "id": "TC_006",
     "name": "Verify remove from wishlist functionality",
     "description": "Verify that logged-in users can remove products from their wishlist.",
     "steps": [
@@ -172,7 +172,7 @@
     "estimatedDuration": 3
   },
   {
-    "id": "TC-007",
+    "id": "TC_007",
     "name": "Verify admin login functionality",
     "description": "Verify that administrators can log in to the admin panel with valid credentials.",
     "steps": [
@@ -200,7 +200,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-008",
+    "id": "TC_008",
     "name": "Verify admin logout functionality",
     "description": "Verify that administrators can log out from the admin panel.",
     "steps": [
@@ -227,7 +227,7 @@
     "estimatedDuration": 1
   },
   {
-    "id": "TC-009",
+    "id": "TC_009",
     "name": "Verify product deletion functionality",
     "description": "Verify that administrators can delete products from the catalog.",
     "steps": [
@@ -257,7 +257,7 @@
     "estimatedDuration": 3
   },
   {
-    "id": "TC-010",
+    "id": "TC_010",
     "name": "Verify category creation functionality",
     "description": "Verify that administrators can create new product categories.",
     "steps": [
@@ -288,7 +288,7 @@
     "estimatedDuration": 3
   },
   {
-    "id": "TC-011",
+    "id": "TC_011",
     "name": "Verify admin login with invalid credentials",
     "description": "Verify that the system displays an appropriate error message when an admin attempts to log in with invalid credentials.",
     "steps": [
@@ -316,7 +316,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-012",
+    "id": "TC_012",
     "name": "Verify admin login with invalid username",
     "description": "Verify that the system displays an appropriate error message when an admin attempts to log in with an invalid username but correct password.",
     "steps": [
@@ -344,7 +344,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-013",
+    "id": "TC_013",
     "name": "Verify admin login with invalid password",
     "description": "Verify that the system displays an appropriate error message when an admin attempts to log in with a valid username but incorrect password.",
     "steps": [
@@ -372,7 +372,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-014",
+    "id": "TC_014",
     "name": "Verify admin login with empty fields",
     "description": "Verify that the system displays validation messages when an admin attempts to log in with empty username and password fields.",
     "steps": [
@@ -401,7 +401,7 @@
     "estimatedDuration": 1
   },
   {
-    "id": "TC-015",
+    "id": "TC_015",
     "name": "Verify admin redirect to dashboard after login",
     "description": "Verify that after successful login, the admin is redirected to the dashboard page.",
     "steps": [
@@ -432,7 +432,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-016",
+    "id": "TC_016",
     "name": "Verify password masking during admin login",
     "description": "Verify that the password is masked (displayed as dots or asterisks) when entered in the password field on the admin login page.",
     "steps": [
@@ -461,7 +461,7 @@
     "estimatedDuration": 1
   },
   {
-    "id": "TC-017",
+    "id": "TC_017",
     "name": "Verify browser back button after admin logout",
     "description": "Verify that using the browser back button after admin logout doesn't allow access to protected admin pages.",
     "steps": [
@@ -493,7 +493,7 @@
     "estimatedDuration": 2
   },
   {
-    "id": "TC-018",
+    "id": "TC_018",
     "name": "Concurrent Admin User Login Test",
     "description": "Test behavior when same admin account logs in from multiple locations.",
     "steps": [

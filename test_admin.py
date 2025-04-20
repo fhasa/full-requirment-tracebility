@@ -28,9 +28,9 @@ def close_security_modal_if_present(driver):
 
 
 def login(driver):
-    driver.get("http://localhost/opencart/admin2")
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
+    driver.get("https://demo.opencart.com.gr/admin")
+    driver.find_element(By.ID, "input-username").send_keys("demo")
+    driver.find_element(By.ID, "input-password").send_keys("demo")
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//h1[contains(text(), 'Dashboard')]"))
@@ -38,16 +38,16 @@ def login(driver):
     close_security_modal_if_present(driver)
 
 
-@pytest.mark.testcase_id("TC-007")
-def test_admin_login(driver,custom_json_reporter):
+
+def test_admin_login_TC_007(driver):
     """[TC-007] Verify admin login functionality"""
     login(driver)
     heading = driver.find_element(By.XPATH, "//h1").text
     assert "Dashboard" in heading
 
 
-@pytest.mark.testcase_id("TC-009")
-def test_delete_product(driver, custom_json_reporter):
+
+def test_delete_product_TC_009(driver):
     """[TC-009] Verify product deletion functionality"""
     login(driver)
 
@@ -97,8 +97,8 @@ def test_delete_product(driver, custom_json_reporter):
         print(f"Delete Product Error: {e}")
         raise
 
-@pytest.mark.testcase_id("TC-008")
-def test_admin_logout(driver,custom_json_reporter):
+
+def test_admin_logout_TC_008(driver):
     """[TC-008] Verify admin logout functionality"""
     login(driver)
 
@@ -120,8 +120,8 @@ def test_admin_logout(driver,custom_json_reporter):
 # Removing the first implementation of test_add_new_category since it's duplicated
 # and keeping only the more detailed second implementation with the test case ID
 
-@pytest.mark.testcase_id("TC-010")
-def test_add_new_category(driver, custom_json_reporter):
+
+def test_add_new_category_TC_010(driver):
     """[TC-010] Verify category creation functionality"""
     login(driver)
 
@@ -180,11 +180,11 @@ def test_add_new_category(driver, custom_json_reporter):
         with open("category_creation_failure_source_debug.html", "w", encoding="utf-8") as f:
             f.write(driver.page_source)
         raise e
-@pytest.mark.testcase_id("TC-011")
-def test_admin_login_invalid_credentials(driver, custom_json_reporter):
+
+def test_admin_login_invalid_credentials_TC_011(driver):
     """[TC-011] Verify admin login with invalid credentials"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Enter invalid username and password
     driver.find_element(By.ID, "input-username").send_keys("invalid_username")
@@ -204,15 +204,15 @@ def test_admin_login_invalid_credentials(driver, custom_json_reporter):
     # Verify we're still on the login page - test passes if we didn't navigate away
     assert "login" in driver.current_url.lower() or "admin" in driver.current_url.lower()
     assert driver.find_element(By.ID, "input-username").is_displayed()
-@pytest.mark.testcase_id("TC-012")
-def test_admin_login_invalid_username(driver, custom_json_reporter):
+
+def test_admin_login_invalid_username_TC_012(driver):
     """[TC-012] Verify admin login with invalid username"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Enter invalid username but correct password
     driver.find_element(By.ID, "input-username").send_keys("invalid_username")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")  # Correct password
+    driver.find_element(By.ID, "input-password").send_keys("demo")  # Correct password
     
     # Click on the login button
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
@@ -228,14 +228,14 @@ def test_admin_login_invalid_username(driver, custom_json_reporter):
     # Verify we're still on the login page
     assert "login" in driver.current_url.lower() or "admin" in driver.current_url.lower()
     assert driver.find_element(By.ID, "input-username").is_displayed()
-@pytest.mark.testcase_id("TC-013")
-def test_admin_login_invalid_password(driver, custom_json_reporter):
+
+def test_admin_login_invalid_password_TC_013(driver):
     """[TC-013] Verify admin login with invalid password"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Enter valid username but incorrect password
-    driver.find_element(By.ID, "input-username").send_keys("fatima")  # Valid username
+    driver.find_element(By.ID, "input-username").send_keys("demo")  # Valid username
     driver.find_element(By.ID, "input-password").send_keys("wrong_password")  # Incorrect password
     
     # Click on the login button
@@ -252,11 +252,11 @@ def test_admin_login_invalid_password(driver, custom_json_reporter):
     # Verify we're still on the login page
     assert "login" in driver.current_url.lower() or "admin" in driver.current_url.lower()
     assert driver.find_element(By.ID, "input-username").is_displayed()
-@pytest.mark.testcase_id("TC-014")
-def test_admin_login_empty_fields(driver, custom_json_reporter):
+
+def test_admin_login_empty_fields_TC_014(driver):
     """[TC-014] Verify admin login with empty fields"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Leave username and password fields empty (no sendKeys calls)
     
@@ -290,15 +290,15 @@ def test_admin_login_empty_fields(driver, custom_json_reporter):
         
     # The test should pass if we're still on the login page and any validation is present
     assert validation_present, "No validation messages found for empty fields"
-@pytest.mark.testcase_id("TC-015")
-def test_admin_redirect_to_dashboard(driver, custom_json_reporter):
+
+def test_admin_redirect_to_dashboard_TC_015(driver):
     """[TC-015] Verify admin redirect to dashboard after login"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr//admin")
     
     # Enter valid admin credentials
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
+    driver.find_element(By.ID, "input-username").send_keys("demo")
+    driver.find_element(By.ID, "input-password").send_keys("demo")
     
     # Click on the login button
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
@@ -334,11 +334,11 @@ def test_admin_redirect_to_dashboard(driver, custom_json_reporter):
     # Verify that the dashboard panels or widgets are present
     panels = driver.find_elements(By.CSS_SELECTOR, ".card")
     assert len(panels) > 0, "No dashboard panels found"
-@pytest.mark.testcase_id("TC-016")
-def test_password_masking_during_admin_login(driver, custom_json_reporter):
+
+def test_password_masking_during_admin_login_TC_016(driver):
     """[TC-016] Verify password masking during admin login"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Find the password field
     password_field = driver.find_element(By.ID, "input-password")
@@ -374,8 +374,8 @@ def test_password_masking_during_admin_login(driver, custom_json_reporter):
     # This checks that the field has a standard password input appearance
     # with dots or asterisks instead of plain text
     assert password_field.is_displayed(), "Password field is not visible"
-@pytest.mark.testcase_id("TC-017")
-def test_browser_back_button_after_logout(driver, custom_json_reporter):
+
+def test_browser_back_button_after_logout_TC_017(driver):
     """[TC-017] Verify browser back button after admin logout"""
     # First login to the admin panel
     login(driver)
