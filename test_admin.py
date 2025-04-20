@@ -28,9 +28,9 @@ def close_security_modal_if_present(driver):
 
 
 def login(driver):
-    driver.get("http://localhost/opencart/admin2")
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
+    driver.get("https://demo.opencart.com.gr/admin")
+    driver.find_element(By.ID, "input-username").send_keys("demo")
+    driver.find_element(By.ID, "input-password").send_keys("demo")
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//h1[contains(text(), 'Dashboard')]"))
@@ -184,7 +184,7 @@ def test_add_new_category_TC_010(driver):
 def test_admin_login_invalid_credentials_TC_011(driver):
     """[TC-011] Verify admin login with invalid credentials"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Enter invalid username and password
     driver.find_element(By.ID, "input-username").send_keys("invalid_username")
@@ -208,11 +208,11 @@ def test_admin_login_invalid_credentials_TC_011(driver):
 def test_admin_login_invalid_username_TC_012(driver):
     """[TC-012] Verify admin login with invalid username"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Enter invalid username but correct password
     driver.find_element(By.ID, "input-username").send_keys("invalid_username")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")  # Correct password
+    driver.find_element(By.ID, "input-password").send_keys("demo")  # Correct password
     
     # Click on the login button
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
@@ -232,10 +232,10 @@ def test_admin_login_invalid_username_TC_012(driver):
 def test_admin_login_invalid_password_TC_013(driver):
     """[TC-013] Verify admin login with invalid password"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Enter valid username but incorrect password
-    driver.find_element(By.ID, "input-username").send_keys("fatima")  # Valid username
+    driver.find_element(By.ID, "input-username").send_keys("demo")  # Valid username
     driver.find_element(By.ID, "input-password").send_keys("wrong_password")  # Incorrect password
     
     # Click on the login button
@@ -256,7 +256,7 @@ def test_admin_login_invalid_password_TC_013(driver):
 def test_admin_login_empty_fields_TC_014(driver):
     """[TC-014] Verify admin login with empty fields"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Leave username and password fields empty (no sendKeys calls)
     
@@ -294,11 +294,11 @@ def test_admin_login_empty_fields_TC_014(driver):
 def test_admin_redirect_to_dashboard_TC_015(driver):
     """[TC-015] Verify admin redirect to dashboard after login"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr//admin")
     
     # Enter valid admin credentials
-    driver.find_element(By.ID, "input-username").send_keys("fatima")
-    driver.find_element(By.ID, "input-password").send_keys("123968574")
+    driver.find_element(By.ID, "input-username").send_keys("demo")
+    driver.find_element(By.ID, "input-password").send_keys("demo")
     
     # Click on the login button
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
@@ -338,7 +338,7 @@ def test_admin_redirect_to_dashboard_TC_015(driver):
 def test_password_masking_during_admin_login_TC_016(driver):
     """[TC-016] Verify password masking during admin login"""
     # Navigate to the OpenCart admin login page
-    driver.get("http://localhost/opencart/admin2")
+    driver.get("https://demo.opencart.com.gr/admin")
     
     # Find the password field
     password_field = driver.find_element(By.ID, "input-password")
