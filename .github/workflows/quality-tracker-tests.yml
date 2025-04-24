@@ -12,6 +12,7 @@ jobs:
       REQUIREMENT_NAME: ${{ github.event.client_payload.requirementName }}
       TEST_CASE_IDS: ${{ join(github.event.client_payload.testCases, ' or ') }}
       CALLBACK_URL: ${{ github.event.client_payload.callbackUrl }}
+      GITHUB_RUN_ID: ${{ github.run_id }}
       
     steps:
       - name: Checkout repository
@@ -32,6 +33,7 @@ jobs:
         run: |
           echo "Executing tests for requirement: $REQUIREMENT_ID - $REQUIREMENT_NAME"
           echo "Test case IDs: $TEST_CASE_IDS"
+          echo "GitHub Run ID: $GITHUB_RUN_ID"
       
       - name: Run tests
         id: run_tests
@@ -42,11 +44,22 @@ jobs:
       
       - name: Generate test results JSON
         run: |
-          python -c '
+          cat > process_tests.py << 'EOF'
           import json
           import xml.etree.ElementTree as ET
           import os
           import time
+          import sys
+          
+          # Capture debug info first
+          debug_info = {
+              "github_run_id": os.environ.get("GITHUB_RUN_ID", ""),
+              "requirement_id": os.environ.get("REQUIREMENT_ID", ""),
+              "requested_tests": os.environ.get("TEST_CASE_IDS", "").replace(" or ", ",").split(","),
+              "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+          }
+          
+          print(f"Debug Info: {json.dumps(debug_info)}")
           
           # Parse JUnit XML result
           test_results = []
@@ -54,22 +67,28 @@ jobs:
               tree = ET.parse("test-results.xml")
               root = tree.getroot()
               
-              # Get test case IDs from environment variable
-              test_ids = os.environ.get("TEST_CASE_IDS", "").replace(" or ", ",").split(",")
+              # Get test case IDs from environment variable - clean them up properly
+              raw_test_ids = os.environ.get("TEST_CASE_IDS", "").replace(" or ", ",").split(",")
+              test_ids = [tid.strip() for tid in raw_test_ids if tid.strip()]
+              
+              print(f"Processing test IDs: {test_ids}")
               
               # Extract test results
               for testcase in root.findall(".//testcase"):
                   name = testcase.get("name", "")
                   classname = testcase.get("classname", "")
                   
-                  # Match test ID (simplified for example)
+                  # Improved test ID matching
                   test_id = None
                   for tid in test_ids:
-                      if tid in name or tid in classname:
-                          test_id = tid
+                      # Normalize both for comparison (remove TC- vs TC_)
+                      normalized_tid = tid.replace("-", "_").upper()
+                      if normalized_tid in name.replace("-", "_").upper() or normalized_tid in classname.replace("-", "_").upper():
+                          test_id = tid  # Use the original ID format from the request
                           break
                   
                   if not test_id:
+                      print(f"Could not match test case {name} to any requested test ID")
                       continue
                   
                   # Determine status
@@ -88,11 +107,13 @@ jobs:
                       "status": status,
                       "duration": duration_ms
                   })
+                  print(f"Added result for {test_id}: {status}")
               
-              # Add missing test cases as Not Run
+              # IMPORTANT: Add the originally requested tests as Not Run if they weren't found
               found_ids = [r["id"] for r in test_results]
               for tid in test_ids:
                   if tid and tid not in found_ids:
+                      print(f"Adding Not Run status for missing test {tid}")
                       test_results.append({
                           "id": tid,
                           "name": f"Test {tid}",
@@ -102,26 +123,48 @@ jobs:
           except Exception as e:
               print(f"Error processing test results: {e}")
               # Create placeholder results for all test IDs
-              for tid in os.environ.get("TEST_CASE_IDS", "").replace(" or ", ",").split(","):
+              for tid in test_ids:
                   if tid:
                       test_results.append({
                           "id": tid,
                           "name": f"Test {tid}",
                           "status": "Error",
-                          "duration": 0
+                          "duration": 0,
+                          "error": str(e)
                       })
           
-          # Save to file
-          with open("results.json", "w") as f:
-              json.dump({
-                  "requirementId": os.environ.get("REQUIREMENT_ID"),
-                  "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                  "results": test_results
-              }, f, indent=2)
+          # Prepare result object with debug info
+          result_obj = {
+              "requirementId": os.environ.get("REQUIREMENT_ID"),
+              "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+              "results": test_results,
+              "debug": debug_info
+          }
           
-          print(f"Generated test results for {len(test_results)} test cases")
-          '
+          # Save to file - use run ID in filename
+          run_id = os.environ.get("GITHUB_RUN_ID", "unknown")
+          filename = f"results-{run_id}.json"
+          with open(filename, "w") as f:
+              json.dump(result_obj, f, indent=2)
+          
+          # Also save as results.json for backward compatibility
+          with open("results.json", "w") as f:
+              json.dump(result_obj, f, indent=2)
+              
+          print(f"Generated test results for {len(test_results)} test cases in {filename}")
+          EOF
+          
+          # Run the Python script
+          python process_tests.py
       
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ github.run_id }}
+          path: |
+            results-${{ github.run_id }}.json
+            results.json
+          
       - name: Send results back to Quality Tracker
         if: env.CALLBACK_URL != ''
         run: |
