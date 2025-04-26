@@ -1,0 +1,15 @@
+{
+    "id": "REQ-001",
+    "name": "User Authentication",
+    "description": "Users should be able to log in to their account using valid credentials.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 3,
+    "usageFrequency": 4,
+    "versions": ["v1.0", "v1.1"],
+    "status": "Active",
+    "owner": "Authentication Team",
+    "tags": ["Authentication", "Account", "Security"]
+  }

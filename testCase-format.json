@@ -1,0 +1,27 @@
+{
+    "id": "TC_001",
+    "name": "Verify that the homepage loads successfully",
+    "description": "Verify that the homepage loads successfully and contains expected elements like search box and content area.",
+    "steps": [
+      "Navigate to the OpenCart homepage URL.",
+      "Check that the page title is not empty.",
+      "Verify that the search box is displayed.",
+      "Verify that the content area is displayed."
+    ],
+    "expectedResult": "Homepage loads successfully with all key elements present and visible.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_homepage_loads.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-004"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Homepage",
+      "Navigation"
+    ],
+    "priority": "High",
+    "estimatedDuration": 1
+  }
