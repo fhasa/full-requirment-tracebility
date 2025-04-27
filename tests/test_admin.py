@@ -6,12 +6,33 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import time
 import uuid
+import os
+import tempfile
+from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome()
+    # Set up Chrome options with settings to avoid the user data directory issue
+    options = Options()
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    
+    # Create a temporary directory for Chrome user data
+    temp_dir = tempfile.mkdtemp()
+    options.add_argument(f"--user-data-dir={temp_dir}")
+    
+    # If running in CI environment, use headless mode
+    if os.environ.get('CI'):
+        options.add_argument("--headless")
+    
+    # Initialize Chrome with these options
+    driver = webdriver.Chrome(options=options)
     driver.maximize_window()
+    
+    # Return the driver for test use
     yield driver
+    
+    # Always quit the driver after test completion
     driver.quit()
 
 
