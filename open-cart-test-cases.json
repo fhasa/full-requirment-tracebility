@@ -72,7 +72,7 @@
     "automationPath": "tests/TestOpenCart/test_add_to_cart.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-006"
+      "REQ-002"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -521,5 +521,316 @@
     ],
     "priority": "Medium",
     "estimatedDuration": 15
+  },
+  {
+    "id": "TC_019",
+    "name": "Verify Shopping Cart Persistence Across Sessions",
+    "description": "Verify that products added to the shopping cart remain in the cart after user logs out and logs back in.",
+    "steps": [
+      "Login to a user account",
+      "Add multiple products to the shopping cart",
+      "Logout from the account",
+      "Login to the same user account",
+      "Navigate to the shopping cart",
+      "Verify that all previously added products are still present in the cart"
+    ],
+    "expectedResult": "All products added to the cart before logout should still be present in the cart after logging back in.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_cart_persistence.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-002"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Cart",
+      "Product",
+      "Session Management"
+    ],
+    "priority": "Medium",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC_020",
+    "name": "Verify Maximum Product Quantity Validation in Cart",
+    "description": "Verify that the shopping cart validates maximum allowed product quantity and displays appropriate error messages.",
+    "steps": [
+      "Navigate to a product page",
+      "Try to add a quantity exceeding the stock availability or system limit",
+      "Verify that an appropriate error message is displayed",
+      "Add a valid quantity to the cart",
+      "Navigate to the shopping cart",
+      "Try to update the quantity to exceed the maximum allowed limit",
+      "Verify that an appropriate error message is displayed"
+    ],
+    "expectedResult": "System prevents adding quantities exceeding maximum limits with clear error messages.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_cart_quantity_validation.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-002"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Cart",
+      "Validation",
+      "Error Handling"
+    ],
+    "priority": "High",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC_021",
+    "name": "Verify Multiple Product Addition to Cart",
+    "description": "Verify that multiple different products can be added to the shopping cart and are displayed correctly.",
+    "steps": [
+      "Navigate to the first product page",
+      "Add the product to the cart",
+      "Navigate to a different product page",
+      "Add the second product to the cart",
+      "Navigate to a third product page",
+      "Add the third product to the cart",
+      "Navigate to the shopping cart",
+      "Verify that all three products are displayed correctly with accurate quantities and prices"
+    ],
+    "expectedResult": "All added products appear in the cart with correct details and quantities.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_multiple_products_cart.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-002"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Cart",
+      "Product",
+      "Functionality"
+    ],
+    "priority": "High",
+    "estimatedDuration": 4
+  },
+  {
+    "id": "TC_022",
+    "name": "Verify Cart Update and Recalculation",
+    "description": "Verify that changing product quantities in the cart recalculates subtotal, taxes, and total correctly.",
+    "steps": [
+      "Add a product to the cart",
+      "Navigate to the shopping cart",
+      "Note the initial subtotal, taxes, and total",
+      "Update the product quantity",
+      "Verify that subtotal, taxes, and total are recalculated correctly based on the new quantity"
+    ],
+    "expectedResult": "All price calculations update correctly when cart quantities change.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_cart_recalculation.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-002"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Cart",
+      "Pricing",
+      "Calculation"
+    ],
+    "priority": "High",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC_023",
+    "name": "Verify Mini-Cart Functionality",
+    "description": "Verify that the mini-cart in the header displays correct product count and updates when products are added or removed.",
+    "steps": [
+      "Observe the initial state of the mini-cart in the header",
+      "Add a product to the cart",
+      "Verify that the mini-cart updates with the correct product count and total",
+      "Add another product",
+      "Verify that the mini-cart updates accordingly",
+      "Navigate to the cart and remove a product",
+      "Verify that the mini-cart updates to reflect the removal"
+    ],
+    "expectedResult": "Mini-cart in header updates in real-time with correct product count and total.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_mini_cart_functionality.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-002"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Cart",
+      "UI",
+      "Real-time Updates"
+    ],
+    "priority": "Medium",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC_024",
+    "name": "Verify Credit Card Payment Method",
+    "description": "Verify that users can complete purchases using a valid credit card payment method.",
+    "steps": [
+      "Add products to the cart",
+      "Proceed to checkout",
+      "Complete shipping information if required",
+      "Select credit card as the payment method",
+      "Enter valid credit card details",
+      "Complete the order",
+      "Verify that order confirmation is displayed",
+      "Verify that the order appears in the user's order history"
+    ],
+    "expectedResult": "Order is successfully processed with credit card payment method.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_credit_card_payment.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-003"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Payment",
+      "Credit Card",
+      "Checkout"
+    ],
+    "priority": "Critical",
+    "estimatedDuration": 4
+  },
+  {
+    "id": "TC_025",
+    "name": "Verify Digital Wallet Payment Method",
+    "description": "Verify that users can complete purchases using a digital wallet payment method.",
+    "steps": [
+      "Add products to the cart",
+      "Proceed to checkout",
+      "Complete shipping information if required",
+      "Select digital wallet (e.g., PayPal) as the payment method",
+      "Complete authentication and authorization on the payment provider's site",
+      "Return to the store and verify order confirmation",
+      "Verify that the order appears in the user's order history"
+    ],
+    "expectedResult": "Order is successfully processed with digital wallet payment method.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_digital_wallet_payment.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-003"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Payment",
+      "Digital Wallet",
+      "Checkout"
+    ],
+    "priority": "Critical",
+    "estimatedDuration": 4
+  },
+  {
+    "id": "TC_026",
+    "name": "Verify Payment Error Handling",
+    "description": "Verify that the system handles payment errors appropriately and displays clear error messages.",
+    "steps": [
+      "Add products to the cart",
+      "Proceed to checkout",
+      "Complete shipping information if required",
+      "Select credit card as the payment method",
+      "Enter invalid credit card details (e.g., expired card)",
+      "Attempt to complete the order",
+      "Verify that an appropriate error message is displayed",
+      "Verify that the user can retry with different payment details"
+    ],
+    "expectedResult": "System displays clear error messages for payment failures and allows retry.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_payment_error_handling.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-003"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Payment",
+      "Error Handling",
+      "Validation"
+    ],
+    "priority": "High",
+    "estimatedDuration": 3
+  },
+  {
+    "id": "TC_027",
+    "name": "Verify Payment Security Features",
+    "description": "Verify that payment processing includes essential security features like HTTPS, masked card numbers, and CVV verification.",
+    "steps": [
+      "Add products to the cart",
+      "Proceed to checkout",
+      "Verify that the checkout page uses HTTPS (secure connection)",
+      "Select credit card as the payment method",
+      "Enter credit card details",
+      "Verify that the card number is masked after entry",
+      "Verify that CVV is required and validated",
+      "Verify that sensitive data is not stored in HTML source or browser storage"
+    ],
+    "expectedResult": "Payment processing includes all required security features.",
+    "status": "Not Run",
+    "automationStatus": "Manual",
+    "automationPath": "",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-003"
+    ],
+    "version": "v1.0",
+    "executedBy": "",
+    "tags": [
+      "Payment",
+      "Security",
+      "Compliance"
+    ],
+    "priority": "Critical",
+    "estimatedDuration": 5
+  },
+  {
+    "id": "TC_028",
+    "name": "Verify Multiple Payment Methods Availability",
+    "description": "Verify that the system offers all supported payment methods and allows the user to choose between them.",
+    "steps": [
+      "Add products to the cart",
+      "Proceed to checkout",
+      "Complete shipping information if required",
+      "Navigate to the payment method selection step",
+      "Verify that all supported payment methods (credit cards, digital wallets, other online payment services) are available",
+      "Select each payment method one by one",
+      "Verify that each selection shows the appropriate payment form or redirects to the correct payment provider"
+    ],
+    "expectedResult": "All supported payment methods are available and selectable during checkout.",
+    "status": "Not Run",
+    "automationStatus": "Automated",
+    "automationPath": "tests/TestOpenCart/test_payment_methods_availability.py",
+    "lastExecuted": "",
+    "requirementIds": [
+      "REQ-003"
+    ],
+    "version": "v1.0",
+    "executedBy": "Pytest",
+    "tags": [
+      "Payment",
+      "Methods",
+      "Options"
+    ],
+    "priority": "High",
+    "estimatedDuration": 5
   }
 ]
