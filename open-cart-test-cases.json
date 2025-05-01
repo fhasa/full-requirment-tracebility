@@ -532,7 +532,7 @@
     "automationPath": "tests/TestOpenCart/test_cardholder_name_validation.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -564,7 +564,7 @@
     "automationPath": "tests/TestOpenCart/test_billing_address_validation.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -595,7 +595,7 @@
     "automationPath": "tests/TestOpenCart/test_terms_agreement_validation.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -624,7 +624,7 @@
     "automationPath": "tests/TestOpenCart/test_payment_order_summary.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -654,7 +654,7 @@
     "automationPath": "tests/TestOpenCart/test_declined_transaction.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -683,7 +683,7 @@
     "automationPath": "tests/TestOpenCart/test_paypal_payment.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -712,7 +712,7 @@
     "automationPath": "tests/TestOpenCart/test_bank_transfer_payment.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -739,7 +739,7 @@
     "automationPath": "tests/TestOpenCart/test_payment_confirmation_email.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -766,7 +766,7 @@
     "automationPath": "tests/TestOpenCart/test_payment_security.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-003"
+      "REQ-010"
     ],
     "version": "v1.0",
     "executedBy": "Manual",
@@ -1009,8 +1009,7 @@
     "automationPath": "tests/TestOpenCart/test_payment_method_selection_checkout.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-005",
-      "REQ-003"
+      "REQ-005"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -1364,8 +1363,7 @@
     "automationPath": "tests/TestOpenCart/test_add_to_cart_from_detail.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-008",
-      "REQ-002"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -1391,8 +1389,7 @@
     "automationPath": "tests/TestOpenCart/test_add_to_cart_with_options.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-008",
-      "REQ-002"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -1420,8 +1417,7 @@
     "automationPath": "tests/TestOpenCart/test_add_to_cart_quantity_validation.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-008",
-      "REQ-002"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -1449,8 +1445,7 @@
     "automationPath": "tests/TestOpenCart/test_add_to_cart_stock_validation.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-008",
-      "REQ-002"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -1478,8 +1473,7 @@
     "automationPath": "tests/TestOpenCart/test_add_to_cart_success_message.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-008",
-      "REQ-002"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -1506,8 +1500,7 @@
     "automationPath": "tests/TestOpenCart/test_cart_total_update.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-008",
-      "REQ-002"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
@@ -1536,8 +1529,7 @@
     "automationPath": "tests/TestOpenCart/test_add_multiple_quantities.py",
     "lastExecuted": "",
     "requirementIds": [
-      "REQ-008",
-      "REQ-002"
+      "REQ-008"
     ],
     "version": "v1.0",
     "executedBy": "Pytest",
