@@ -15,66 +15,6 @@
     "tags": ["Authentication", "Account", "Security"]
   },
   {
-    "id": "REQ-016",
-    "name": "Currency Selection",
-    "description": "Users should be able to select their preferred currency from a dropdown menu.",
-    "priority": "Medium",
-    "type": "Functional",
-    "businessImpact": 4,
-    "technicalComplexity": 2,
-    "regulatoryFactor": 2,
-    "usageFrequency": 3,
-    "versions": ["v1.0"],
-    "status": "Active",
-    "owner": "UI Team",
-    "tags": ["Currency", "International", "User Preference"]
-  },
-  {
-    "id": "REQ-017",
-    "name": "User Account Access",
-    "description": "Users should be able to access their account section through a dedicated link.",
-    "priority": "High",
-    "type": "Functional",
-    "businessImpact": 5,
-    "technicalComplexity": 3,
-    "regulatoryFactor": 3,
-    "usageFrequency": 5,
-    "versions": ["v1.0"],
-    "status": "Active",
-    "owner": "Authentication Team",
-    "tags": ["Account", "User", "Authentication"]
-  },
-  {
-    "id": "REQ-018",
-    "name": "Wish List Functionality",
-    "description": "Users should be able to add products to a wish list and view their wish list count.",
-    "priority": "Medium",
-    "type": "Functional",
-    "businessImpact": 3,
-    "technicalComplexity": 3,
-    "regulatoryFactor": 1,
-    "usageFrequency": 3,
-    "versions": ["v1.0"],
-    "status": "Active",
-    "owner": "User Experience Team",
-    "tags": ["Wish List", "Product", "User Preference"]
-  },
-  {
-    "id": "REQ-019",
-    "name": "Shopping Cart Management",
-    "description": "Users should be able to view and access their shopping cart with item count and total amount.",
-    "priority": "High",
-    "type": "Functional",
-    "businessImpact": 5,
-    "technicalComplexity": 3,
-    "regulatoryFactor": 2,
-    "usageFrequency": 5,
-    "versions": ["v1.0"],
-    "status": "Active",
-    "owner": "Shopping Cart Team",
-    "tags": ["Shopping Cart", "Purchase", "Checkout"]
-  },
-  {
     "id": "REQ-002",
     "name": "Shopping Cart",
     "description": "Users should be able to view and manage items in their shopping cart with item count and total amount.",
@@ -106,6 +46,66 @@
   },
   {
     "id": "REQ-004",
+    "name": "Currency Selection",
+    "description": "Users should be able to select their preferred currency from a dropdown menu.",
+    "priority": "Medium",
+    "type": "Functional",
+    "businessImpact": 4,
+    "technicalComplexity": 2,
+    "regulatoryFactor": 2,
+    "usageFrequency": 3,
+    "versions": ["v1.0"],
+    "status": "Active",
+    "owner": "UI Team",
+    "tags": ["Currency", "International", "User Preference"]
+  },
+  {
+    "id": "REQ-005",
+    "name": "User Account Access",
+    "description": "Users should be able to access their account section through a dedicated link.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 3,
+    "usageFrequency": 5,
+    "versions": ["v1.0"],
+    "status": "Active",
+    "owner": "Authentication Team",
+    "tags": ["Account", "User", "Authentication"]
+  },
+  {
+    "id": "REQ-006",
+    "name": "Wish List Functionality",
+    "description": "Users should be able to add products to a wish list and view their wish list count.",
+    "priority": "Medium",
+    "type": "Functional",
+    "businessImpact": 3,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 1,
+    "usageFrequency": 3,
+    "versions": ["v1.0"],
+    "status": "Active",
+    "owner": "User Experience Team",
+    "tags": ["Wish List", "Product", "User Preference"]
+  },
+  {
+    "id": "REQ-007",
+    "name": "Shopping Cart Management",
+    "description": "Users should be able to view and access their shopping cart with item count and total amount.",
+    "priority": "High",
+    "type": "Functional",
+    "businessImpact": 5,
+    "technicalComplexity": 3,
+    "regulatoryFactor": 2,
+    "usageFrequency": 5,
+    "versions": ["v1.0"],
+    "status": "Active",
+    "owner": "Shopping Cart Team",
+    "tags": ["Shopping Cart", "Purchase", "Checkout"]
+  },
+  {
+    "id": "REQ-008",
     "name": "Product Search",
     "description": "Users should be able to search for products using a search box with search button.",
     "priority": "Medium",
@@ -120,7 +120,7 @@
     "tags": ["Shopping Cart", "Purchase", "Checkout"]
   },
   {
-    "id": "REQ-005",
+    "id": "REQ-009",
     "name": "Checkout Process",
     "description": "Users should be able to proceed to checkout through a dedicated link.",
     "priority": "High",
@@ -136,7 +136,7 @@
   },
 
   {
-    "id": "REQ-006",
+    "id": "REQ-010",
     "name": "Product Category Navigation",
     "description": "Users should be able to browse products by predefined categories through a navigation menu.",
     "priority": "High",
@@ -151,7 +151,7 @@
     "tags": ["Categories", "Navigation", "Browse"]
   },
   {
-    "id": "REQ-007",
+    "id": "REQ-011",
     "name": "Featured Products Display",
     "description": "The system should display featured products on the homepage with images, descriptions, and prices.",
     "priority": "Medium",
@@ -166,7 +166,7 @@
     "tags": ["Featured", "Products", "Homepage"]
   },
   {
-    "id": "REQ-008",
+    "id": "REQ-012",
     "name": "Product Add to Cart",
     "description": "Users should be able to add products to their shopping cart directly from product listings.",
     "priority": "High",
@@ -181,7 +181,7 @@
     "tags": ["Add to Cart", "Shopping", "Product"]
   },
   {
-    "id": "REQ-009",
+    "id": "REQ-013",
     "name": "Product Add to Wish List",
     "description": "Users should be able to add products to their wish list directly from product listings.",
     "priority": "Medium",
@@ -196,7 +196,7 @@
     "tags": ["Wish List", "Product", "User Preference"]
   },
   {
-    "id": "REQ-010",
+    "id": "REQ-014",
     "name": "Product Comparison",
     "description": "Users should be able to add products to comparison from product listings.",
     "priority": "Low",
@@ -211,7 +211,7 @@
     "tags": ["Compare", "Product", "Features"]
   },
   {
-    "id": "REQ-011",
+    "id": "REQ-015",
     "name": "Product Price Display",
     "description": "Product listings should display both original and discounted prices when applicable.",
     "priority": "Medium",
@@ -226,7 +226,7 @@
     "tags": ["Price", "Discount", "Product"]
   },
   {
-    "id": "REQ-012",
+    "id": "REQ-016",
     "name": "Brand Showcase",
     "description": "The system should display partner/brand logos in a showcase area on the homepage.",
     "priority": "Low",
@@ -241,7 +241,7 @@
     "tags": ["Brands", "Partners", "Marketing"]
   },
   {
-    "id": "REQ-013",
+    "id": "REQ-017",
     "name": "Product Carousel",
     "description": "The system should display featured products or promotions in a carousel with navigation controls.",
     "priority": "Medium",
@@ -256,7 +256,7 @@
     "tags": ["Carousel", "Featured", "UI"]
   },
   {
-    "id": "REQ-015",
+    "id": "REQ-018",
     "name": "Responsive Design",
     "description": "The website should be responsive and adapt to different screen sizes and devices.",
     "priority": "High",
@@ -271,7 +271,7 @@
     "tags": ["Responsive", "Mobile", "Design"]
   },
     {
-    "id": "REQ-016",
+    "id": "REQ-019",
     "name": "Account Registration Form",
     "description": "The system shall provide a registration form with fields for first name, last name, email, telephone, and password to allow new users to create an account.",
     "priority": "High",
@@ -286,7 +286,7 @@
     "tags": ["Registration", "User Account", "Security"]
   },
   {
-    "id": "REQ-017",
+    "id": "REQ-020",
     "name": "Required Registration Fields",
     "description": "The account registration form shall clearly mark required fields with an asterisk (*) and validate these fields before submission.",
     "priority": "High",
@@ -301,7 +301,7 @@
     "tags": ["Form Validation", "Registration", "User Experience"]
   },
   {
-    "id": "REQ-018",
+    "id": "REQ-021",
     "name": "Account Sidebar Navigation",
     "description": "The account pages shall include a sidebar navigation menu with links to Login, Register, Forgotten Password, My Account, Address Book, Wish List, Order History, Downloads, Recurring Payments, Reward Points, Returns, Transactions, and Newsletter.",
     "priority": "Medium",
@@ -316,7 +316,7 @@
     "tags": ["Account Management", "Navigation", "User Experience"]
   },
   {
-    "id": "REQ-019",
+    "id": "REQ-022",
     "name": "Newsletter Subscription Option",
     "description": "The account registration form shall include radio buttons for users to opt in or out of the newsletter subscription with 'No' selected by default.",
     "priority": "Low",
@@ -331,7 +331,7 @@
     "tags": ["Newsletter", "Registration", "Marketing"]
   },
   {
-    "id": "REQ-020",
+    "id": "REQ-023",
     "name": "Privacy Policy Consent",
     "description": "The account registration form shall include a checkbox for users to confirm they have read and agree to the Privacy Policy, with a link to view the policy.",
     "priority": "High",
@@ -346,7 +346,7 @@
     "tags": ["Privacy", "Compliance", "Registration"]
   },
   {
-    "id": "REQ-021",
+    "id": "REQ-024",
     "name": "Registration Password Confirmation",
     "description": "The account registration form shall include both 'Password' and 'Password Confirm' fields to verify the user has entered their intended password correctly.",
     "priority": "Medium",
@@ -361,7 +361,7 @@
     "tags": ["Password", "Security", "Registration"]
   },
   {
-    "id": "REQ-022",
+    "id": "REQ-025",
     "name": "Registration Continue Button",
     "description": "The account registration form shall include a prominent 'Continue' button that submits the form once all required fields are completed and validated.",
     "priority": "High",
@@ -376,7 +376,7 @@
     "tags": ["Registration", "Form Submission", "User Experience"]
   },
   {
-    "id": "REQ-023",
+    "id": "REQ-026",
     "name": "Existing Account Login Prompt",
     "description": "The registration page shall include a message informing users with existing accounts to log in at the login page, with a link to that page.",
     "priority": "Medium",
@@ -391,7 +391,7 @@
     "tags": ["Registration", "Login", "User Experience"]
   },
   {
-    "id": "REQ-024",
+    "id": "REQ-027",
     "name": "Breadcrumb Navigation",
     "description": "All pages shall include breadcrumb navigation showing the path from home to the current page, allowing users to track their location and navigate backward in the hierarchy.",
     "priority": "Medium",
@@ -406,7 +406,7 @@
     "tags": ["Navigation", "Breadcrumbs", "User Experience"]
   },
   {
-    "id": "REQ-025",
+    "id": "REQ-028",
     "name": "Wishlist Management",
     "description": "The system shall provide a wishlist functionality allowing logged-in users to save products for future consideration, with product images, names, models, stock information, pricing, and action buttons.",
     "priority": "Medium",
@@ -421,7 +421,7 @@
     "tags": ["Wishlist", "Product", "User Experience"]
   },
   {
-    "id": "REQ-026",
+    "id": "REQ-029",
     "name": "Wishlist Add to Cart",
     "description": "The wishlist page shall provide 'Add to Cart' buttons for each product, allowing users to easily purchase items from their wishlist.",
     "priority": "Medium",
@@ -436,7 +436,7 @@
     "tags": ["Wishlist", "Shopping Cart", "Conversion"]
   },
   {
-    "id": "REQ-027",
+    "id": "REQ-030",
     "name": "Wishlist Remove Function",
     "description": "The wishlist page shall provide 'Remove' buttons for each product, allowing users to delete items from their wishlist.",
     "priority": "Medium",
@@ -451,7 +451,7 @@
     "tags": ["Wishlist", "User Experience"]
   },
   {
-    "id": "REQ-028",
+    "id": "REQ-031",
     "name": "Wishlist Stock Display",
     "description": "The wishlist page shall display the current stock availability for each product, informing users of product availability before they add items to cart.",
     "priority": "Medium",
@@ -466,7 +466,7 @@
     "tags": ["Wishlist", "Inventory", "User Experience"]
   },
   {
-    "id": "REQ-029",
+    "id": "REQ-032",
     "name": "Shopping Cart Detail View",
     "description": "The shopping cart page shall display a detailed list of all added products, including images, product names, models, quantities, unit prices, and total prices per item.",
     "priority": "High",
@@ -481,7 +481,7 @@
     "tags": ["Shopping Cart", "Order Process", "User Experience"]
   },
   {
-    "id": "REQ-030",
+    "id": "REQ-033",
     "name": "Shopping Cart Quantity Update",
     "description": "The shopping cart shall allow users to update product quantities directly from the cart page, with refresh and remove buttons for each product.",
     "priority": "High",
@@ -496,7 +496,7 @@
     "tags": ["Shopping Cart", "User Experience", "Order Process"]
   },
   {
-    "id": "REQ-031",
+    "id": "REQ-034",
     "name": "Shopping Cart Weight Display",
     "description": "The shopping cart shall display the total weight of all products in the cart (e.g., in kg), to inform shipping calculations.",
     "priority": "Medium",
@@ -511,7 +511,7 @@
     "tags": ["Shopping Cart", "Shipping", "User Experience"]
   },
   {
-    "id": "REQ-032",
+    "id": "REQ-035",
     "name": "Cart Price Calculation",
     "description": "The shopping cart shall calculate and display sub-total, taxes (including specific taxes like Eco Tax and VAT with percentages), and the final total amount.",
     "priority": "High",
@@ -526,7 +526,7 @@
     "tags": ["Shopping Cart", "Pricing", "Taxes"]
   },
   {
-    "id": "REQ-033",
+    "id": "REQ-036",
     "name": "Stock Availability Warning",
     "description": "The shopping cart shall display warning messages for products that are not available in the desired quantity or out of stock, with clear visual indicators.",
     "priority": "High",
@@ -541,7 +541,7 @@
     "tags": ["Shopping Cart", "Inventory", "User Experience"]
   },
   {
-    "id": "REQ-034",
+    "id": "REQ-037",
     "name": "Coupon Code Functionality",
     "description": "The shopping cart shall provide a collapsible section allowing users to enter and apply coupon codes to their order.",
     "priority": "Medium",
@@ -556,7 +556,7 @@
     "tags": ["Shopping Cart", "Promotions", "Checkout"]
   },
   {
-    "id": "REQ-035",
+    "id": "REQ-038",
     "name": "Shipping Estimation",
     "description": "The shopping cart shall provide a collapsible section allowing users to estimate shipping and taxes based on their location before proceeding to checkout.",
     "priority": "Medium",
@@ -571,7 +571,7 @@
     "tags": ["Shopping Cart", "Shipping", "Taxes"]
   },
   {
-    "id": "REQ-036",
+    "id": "REQ-039",
     "name": "Cart Navigation Options",
     "description": "The shopping cart page shall provide both 'Continue Shopping' and 'Checkout' buttons, allowing users to either return to shopping or proceed with the purchase.",
     "priority": "High",
