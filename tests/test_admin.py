@@ -21,78 +21,78 @@ def driver():
     driver.quit()
 
 
-def test_admin_login_TC_007(driver):
-    """[TC-007] Verify admin login functionality"""
+def test_user_login_with_valid_credentials_TC_001(driver):
+    """[TC-001] Verify user login with valid credentials"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_delete_product_TC_009(driver):
-    """[TC-009] Verify product deletion functionality"""
+def test_user_login_with_invalid_credentials_TC_002(driver):
+    """[TC-002] Verify user login with invalid credentials"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_admin_logout_TC_008(driver):
-    """[TC-008] Verify admin logout functionality"""
+def test_login_from_my_account_dropdown_TC_003(driver):
+    """[TC-003] Verify login from My Account dropdown"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_add_new_category_TC_010(driver):
-    """[TC-010] Verify category creation functionality"""
+def test_forgotten_password_functionality_TC_004(driver):
+    """[TC-004] Verify 'Forgotten Password' functionality"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_admin_login_invalid_credentials_TC_011(driver):
-    """[TC-011] Verify admin login with invalid credentials"""
+def test_new_customer_registration_flow_TC_005(driver):
+    """[TC-005] Verify new customer registration flow"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_admin_login_invalid_username_TC_012(driver):
-    """[TC-012] Verify admin login with invalid username"""
+def test_registration_with_existing_email_TC_006(driver):
+    """[TC-006] Verify registration with existing email"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_admin_login_invalid_password_TC_013(driver):
-    """[TC-013] Verify admin login with invalid password"""
+def test_registration_without_privacy_policy_TC_007(driver):
+    """[TC-007] Verify registration without agreeing to Privacy Policy"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_admin_login_empty_fields_TC_014(driver):
-    """[TC-014] Verify admin login with empty fields"""
+def test_registration_with_missing_fields_TC_008(driver):
+    """[TC-008] Verify registration with missing required fields"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_admin_redirect_to_dashboard_TC_015(driver):
-    """[TC-015] Verify admin redirect to dashboard after login"""
+def test_add_product_to_shopping_cart_TC_009(driver):
+    """[TC-009] Verify adding product to shopping cart"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_password_masking_during_admin_login_TC_016(driver):
-    """[TC-016] Verify password masking during admin login"""
+def test_shopping_cart_header_display_TC_010(driver):
+    """[TC-010] Verify shopping cart header display"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
 
 
-def test_browser_back_button_after_logout_TC_017(driver):
-    """[TC-017] Verify browser back button after logout"""
+def test_shopping_cart_page_access_TC_011(driver):
+    """[TC-011] Verify shopping cart page access"""
     # Wait 3 seconds and then pass
     time.sleep(3)
     assert True
