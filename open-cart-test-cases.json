@@ -268,7 +268,7 @@
     ],
     "expectedResult": "Shopping cart in header should display correct number of items and total amount (e.g., '4 item(s) - $489.20').",
     "status": "Not Run",
-    "automationStatus": "Automated",
+    "automationStatus": "Manual",
     "automationPath": "tests/TestOpenCart/test_cart_header_display.py",
     "lastExecuted": "",
     "requirementIds": [
@@ -789,7 +789,7 @@
     ],
     "expectedResult": "Search results page should display matching products with the search term, or appropriate 'no results' message if no products match.",
     "status": "Not Run",
-    "automationStatus": "Automated",
+    "automationStatus": "Manual",
     "automationPath": "tests/TestOpenCart/test_basic_keyword_search.py",
     "lastExecuted": "",
     "requirementIds": [
