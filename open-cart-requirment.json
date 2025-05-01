@@ -8,8 +8,12 @@
     "businessImpact": 5,
     "technicalComplexity": 3,
     "regulatoryFactor": 3,
-    "usageFrequency": 5,
-    "versions": ["v1.0",
+    "usageFrequency": 4,
+    "versions": ["v1.0", "v1.1"],
+    "status": "Active",
+    "owner": "Authentication Team",
+    "tags": ["Authentication", "Account", "Security"]
+  },
   {
     "id": "REQ-016",
     "name": "Currency Selection",
@@ -69,11 +73,6 @@
     "status": "Active",
     "owner": "Shopping Cart Team",
     "tags": ["Shopping Cart", "Purchase", "Checkout"]
-  }
-],
-    "status": "Active",
-    "owner": "Authentication Team",
-    "tags": ["Authentication", "Account", "Security"]
   },
   {
     "id": "REQ-002",
